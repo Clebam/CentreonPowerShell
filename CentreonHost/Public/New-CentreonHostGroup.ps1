@@ -15,9 +15,12 @@
 #>
 function New-CentreonHostGroup {
     param (
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
         [string] $Name,
+        [ValidateNotNullOrEmpty()]
         [string] $Description
     )
     $Value = "$Description;$Name"
-    Invoke-Centreon -CentreonSession $CentreonSession -Object HG -Action ADD -Value $Value
+    Invoke-Centreon -Object HG -Action ADD -Value $Value
 }

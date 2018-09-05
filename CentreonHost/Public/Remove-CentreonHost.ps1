@@ -13,7 +13,9 @@
 #>
 function Remove-CentreonHost {
     param (
+        [Parameter(Mandatory, ValueFromPipeline, Position = 0)]
+        [ValidateNotNullOrEmpty()]
         [string] $HostName
     )
-    Invoke-Centreon -CentreonSession $CentreonSession -Object HOST -Action DEL -Value $HostName
+    Invoke-Centreon -Object HOST -Action DEL -Value $HostName
 }

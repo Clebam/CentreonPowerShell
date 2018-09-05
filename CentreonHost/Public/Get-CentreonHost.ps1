@@ -18,9 +18,9 @@ function Get-CentreonHost {
         [string] $Filter
     )
     if ($Filter) {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object HOST -Action SHOW -Value $Filter
+        Invoke-Centreon -Object HOST -Action SHOW -Value $Filter
     }
     else {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object HOST -Action SHOW
+        Invoke-Centreon -Object HOST -Action SHOW
     }
 }

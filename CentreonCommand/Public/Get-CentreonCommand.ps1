@@ -18,9 +18,9 @@ function Get-CentreonCommand {
         [string] $Filter
     )
     if ($Filter) {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object CMD -Action SHOW -Value $Filter
+        Invoke-Centreon -Object CMD -Action SHOW -Value $Filter
     }
     else {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object CMD -Action SHOW
+        Invoke-Centreon -Object CMD -Action SHOW
     }
 }

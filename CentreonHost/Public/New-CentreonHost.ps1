@@ -54,8 +54,8 @@ function New-CentreonHost {
     )
 
     $Value = "$HostName;$Description;$HostAddress;$Template;$PollerName;$HostGroup"
-    Invoke-Centreon -CentreonSession $CentreonSession -Object HOST -Action ADD -Value $Value
+    Invoke-Centreon -Object HOST -Action ADD -Value $Value
     if ($ApplyTemplate) {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object HOST -Action APPLYTPL -Value $HostName
+        Invoke-Centreon -Object HOST -Action APPLYTPL -Value $HostName
     }
 }

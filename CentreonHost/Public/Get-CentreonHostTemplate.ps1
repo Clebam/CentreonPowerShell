@@ -18,9 +18,9 @@ function Get-CentreonHostTemplate {
         [string] $Filter
     )
     if ($Filter) {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object HTPL -Action SHOW -Value $Filter
+        Invoke-Centreon -Object HTPL -Action SHOW -Value $Filter
     }
     else {
-        Invoke-Centreon -CentreonSession $CentreonSession -Object HTPL -Action SHOW
+        Invoke-Centreon -Object HTPL -Action SHOW
     }
 }
