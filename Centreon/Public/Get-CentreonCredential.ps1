@@ -1,4 +1,15 @@
-﻿function Get-CentreonCredential {
+﻿<#
+    .SYNOPSIS
+        Returns the credential stored in config.json
+    .DESCRIPTION
+        Returns the credential stored in config.json
+    .EXAMPLE
+        Get-CentreonCredential
+    .NOTES
+        Author: Clebam
+        Version: 1.0
+#>
+function Get-CentreonCredential {
 
     $ModuleDirectory = (Get-Module CentreonModule).ModuleBase
     $ConfigFilePath = Join-Path -Path $ModuleDirectory -ChildPath "Config\Config.json"

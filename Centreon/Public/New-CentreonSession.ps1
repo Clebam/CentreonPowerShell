@@ -1,3 +1,12 @@
+<#
+    .SYNOPSIS
+        !!! The function has currently no use !!!
+    .DESCRIPTION
+        !!! The function has currently no use !!!
+    .NOTES
+        Author: Clebam
+        Version: 1.0
+#>
 function New-CentreonSession {  
     param (
         [Parameter(Mandatory)]

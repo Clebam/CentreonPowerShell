@@ -1,8 +1,29 @@
+<#
+    .SYNOPSIS
+        Invokes centreon binary to run commands
+    .DESCRIPTION
+        Invokes centreon binary to run commands
+    .PARAMETER Object
+        Corresponds to the object type
+    .PARAMETER Action
+        Corresponds to the action applied to the object
+    .PARAMETER Value
+        Corresponds to the variables applied to the action
+    .EXAMPLE
+        Invoke-Centreon -Object HOST -Action SHOW -Value "Web"
+    .NOTES
+        Author: Clebam
+        Version: 1.0
+#>
 function Invoke-Centreon {
     param(
-        $Option,
-        $Action,
-        $Value
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string] $Object,
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string] $Action,
+        [string] $Value
     )
     $ModuleDirectory = (Get-Module CentreonModule).ModuleBase
     $ConfigFilePath = Join-Path -Path $ModuleDirectory -ChildPath "Config\Config.json"
@@ -11,9 +32,9 @@ function Invoke-Centreon {
     $clapi = $ConfigObject.centreonbinary
     $CentreonSession = Get-CentreonCredential
     $arguments = "-u $($CentreonSession.UserName) -p $($CentreonSession.Password)"
-    
-    if ($Option) {
-        $arguments += " -o $Option"
+
+    if ($Object) {
+        $arguments += " -o $Object"
     }
 
     if ($Action) {
@@ -29,6 +50,10 @@ function Invoke-Centreon {
         $Process.StandardOutput.ReadToEnd() | ConvertFrom-Csv -Delimiter ";"
     }
     else {
-        throw "An error occured $($Process.StandardOutput.ReadToEnd())"
+        throw @"
+An error occured :
+    Standard Output : $($Process.StandardOutput.ReadToEnd())
+    Error Output : $($Process.StandardError.ReadToEnd())
+"@
     }
 }
