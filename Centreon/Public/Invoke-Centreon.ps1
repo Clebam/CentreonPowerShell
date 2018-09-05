@@ -18,6 +18,8 @@
 function Invoke-Centreon {
     param(
         [Parameter(Mandatory)]
+        [PSCustomObject] $CentreonSession
+        [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $Object,
         [Parameter(Mandatory)]

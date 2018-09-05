@@ -1,5 +1,5 @@
 {
-    "UserName":  "test",
-    "PassWord":  "test",
+    "UserName":  "admin",
+    "PassWord":  "centreon",
     "centreonbinary":  "centreon"
 }
