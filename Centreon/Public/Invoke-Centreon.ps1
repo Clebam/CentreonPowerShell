@@ -47,7 +47,14 @@ function Invoke-Centreon {
     $Process = Invoke-Process -Process $clapi -Arguments $arguments
 
     if ($Process.ExitCode -eq 0) {
-        $Process.StandardOutput.ReadToEnd() | ConvertFrom-Csv -Delimiter ";"
+        $Output = $Process.StandardOutput.ReadToEnd()
+        $CsvOutput = $Output | ConvertFrom-Csv -Delimiter ";"
+        if ($CsvOutput) {
+            $CsvOutput
+        }
+        else {
+            $Output
+        }
     }
     else {
         throw @"
