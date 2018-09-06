@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '1.0.0.3'
+ModuleVersion = '1.0.0.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -72,11 +72,15 @@ NestedModules = @('Centreon',
                'CentreonService')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-CentreonCommand', 'Get-CentreonCredential', 'Get-CentreonHost', 
+FunctionsToExport = 'Disable-CentreonHost', 'Enable-CentreonHost', 'Get-CentreonCommand', 
+               'Get-CentreonCredential', 'Get-CentreonHost', 
+               'Get-CentreonHostBoundTemplate', 'Get-CentreonHostContact', 
+               'Get-CentreonHostContactGroup', 'Get-CentreonHostHostGroup', 
+               'Get-CentreonHostMacro', 'Get-CentreonHostParent', 
                'Get-CentreonHostTemplate', 'Get-CentreonServiceTemplate', 
                'Invoke-Centreon', 'New-CentreonHost', 'New-CentreonHostGroup', 
-               'New-CentreonSession', 'Remove-CentreonHost', 
-               'Set-CentreonCredential'
+               'New-CentreonSession', 'Register-CentreonHostTemplate', 
+               'Remove-CentreonHost', 'Set-CentreonCredential'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
