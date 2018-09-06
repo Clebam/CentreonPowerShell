@@ -1,21 +1,21 @@
-﻿<#
+<#
     .SYNOPSIS
-        Removes an existing host
+        Returns the macros of a host
     .DESCRIPTION
-        Removes an existing host
+        Returns the macros of a host
     .PARAMETER HostName
-        Corresponds to the name of the host
+        Name of the host
     .EXAMPLE
-        Remove-CentreonHost -HostName "WebMdz01"
+        Get-CentreonHostMacro -HostName "WebMdz01"
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHost {
+function Get-CentreonHostMacro {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName,ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [string] $HostName
     )
-    Invoke-Centreon -Object HOST -Action DEL -Value $HostName
+        Invoke-Centreon -Object HOST -Action GETMACRO -Value $HostName
 }
