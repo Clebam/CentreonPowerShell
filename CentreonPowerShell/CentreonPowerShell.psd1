@@ -39,7 +39,8 @@
 	# FormatsToProcess = @('xml\CentreonPowerShell.Format.ps1xml')
 	
 	# Functions to export from this module
-	FunctionsToExport = @('Add-CentreonHostTemplate',
+	FunctionsToExport = @(
+	'Add-CentreonHostTemplate',
 	'Disable-CentreonHost',
 	'Enable-CentreonHost',
 	'Get-CentreonCommand',
