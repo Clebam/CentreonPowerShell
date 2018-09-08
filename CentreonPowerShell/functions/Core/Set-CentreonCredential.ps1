@@ -1,8 +1,8 @@
 ﻿<#
     .SYNOPSIS
-        Saves credentials
+        Sets credentials needed to call centreon
     .DESCRIPTION
-        Saves credentials
+        Sets credentials needed to call centreon
     .PARAMETER Credential
         Login/Password of an admin account of centreon
     .PARAMETER Register
@@ -16,6 +16,7 @@
         Version: 1.0
 #>
 function Set-CentreonCredential {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
