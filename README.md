@@ -1,12 +1,5 @@
-# CentreonPowerShell
-PowerShell Module to wrap centreon (clapi) commands
+# Description
 
-# Requirements
-- PowerShell (pwsh) on a Linux based system
-- Centreon latest version
+Insert a useful description for the CentreonPowerShell project here.
 
-# Work In Progress
-- Translating the basic commands to cmdlet
-- Translating all the commands to cmdlet
-- Handle Pipelining
-- Secure the password stored in Config.json
+Remember, it's the first thing a visitor will see.

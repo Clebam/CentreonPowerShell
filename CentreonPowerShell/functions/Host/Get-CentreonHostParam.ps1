@@ -1,0 +1,89 @@
+<#
+    .SYNOPSIS
+        Returns a host parameter value
+    .DESCRIPTION
+        Returns a host parameter value
+    .PARAMETER HostName
+        Name of the host
+    .PARAMETER Parameter
+        Host Parameter to get
+    .EXAMPLE
+        Get-CentreonHostParam -HostName "WebMdz01" -Param alias
+    .EXAMPLE
+        Get-CentreonHostParam -HostName "WebMdz01" -All
+    .NOTES
+        Author: Clebam
+        Version: 1.0
+#>
+function Get-CentreonHostParam {
+    [CmdletBinding(DefaultParameterSetName = "Default")]
+    param (
+        [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
+        [ValidateNotNullOrEmpty()]
+        [string] $HostName,
+        [Parameter(Mandatory, ParameterSetName = "Default")]
+        [ValidateSet("2d_coords",
+            "3d_coords",
+            "action_url",
+            "activate",
+            "active_checks_enabled",
+            "address",
+            "alias",
+            "check_command",
+            "check_command_arguments",
+            "check_interval",
+            "check_freshness",
+            "check_period",
+            #"checks_enabled",
+            "contact_additive_inheritance",
+            "cg_additive_inheritance",
+            "event_handler",
+            "event_handler_arguments",
+            "event_handler_enabled",
+            "first_notification_delay",
+            "flap_detection_enabled",
+            "flap_detection_options",
+            "icon_image",
+            "icon_image_alt",
+            "max_check_attempts",
+            "name",
+            #"normal_check_interval",
+            "notes",
+            "notes_url",
+            "notifications_enabled",
+            "notification_interval",
+            "notification_options",
+            "notification_period",
+            "obsess_over_host",
+            "passive_checks_enabled",
+            "process_perf_data",
+            "retain_nonstatus_information",
+            "retain_status_information",
+            "retry_check_interval",
+            "snmp_community",
+            "snmp_version",
+            "stalking_options",
+            "statusmap_image",
+            #"vrml_image",
+            "host_notification_options"
+        )]
+        [string[]] $Parameter,
+        [Parameter(Mandatory, ParameterSetName = "All")]
+        [switch] $All
+    )
+    if ($All) {
+        $Parameter = (Get-Variable "Parameter").Attributes.ValidValues
+    }  #Waiting for all params to be available in GETPARAM
+
+    $ParameterValue = @()
+    foreach ($param in $Parameter) {
+        $Result = Invoke-Centreon -Object HOST -Action GETPARAM -Value "$HostName;$param"
+        $Result = $Result -split ":"
+        $PSObject = [PSCustomObject]@{
+            Parameter = ($Result[0]).TrimEnd()
+            Value     = ($Result[1]).TrimStart()
+        }
+        $ParameterValue += $PSObject
+    }
+    $ParameterValue
+}

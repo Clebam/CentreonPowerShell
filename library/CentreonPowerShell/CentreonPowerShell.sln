@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C2BB3CFC-E6AB-4B81-8AA8-14F6A1C69BB4}") = "CentreonPowerShell", "CentreonPowerShell\CentreonPowerShell.csproj", "{6E66B7B4-19E5-482A-90D5-39C925E3B89C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E66B7B4-19E5-482A-90D5-39C925E3B89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E66B7B4-19E5-482A-90D5-39C925E3B89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E66B7B4-19E5-482A-90D5-39C925E3B89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E66B7B4-19E5-482A-90D5-39C925E3B89C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11968D2A-38AF-448C-910B-0F28123D5D5C}
+	EndGlobalSection
+EndGlobal
