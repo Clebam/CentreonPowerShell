@@ -39,7 +39,34 @@
 	# FormatsToProcess = @('xml\CentreonPowerShell.Format.ps1xml')
 	
 	# Functions to export from this module
-	FunctionsToExport = ''
+	FunctionsToExport = @('Add-CentreonHostTemplate',
+	'Disable-CentreonHost',
+	'Enable-CentreonHost',
+	'Get-CentreonCommand',
+	'Get-CentreonCredential',
+	'Get-CentreonHost',
+	'Get-CentreonHostContact',
+	'Get-CentreonHostContactGroup',
+	'Get-CentreonHostHG',
+	'Get-CentreonHostMacro',
+	'Get-CentreonHostParam',
+	'Get-CentreonHostParent',
+	'Get-CentreonHostTemplate',
+	'Get-CentreonHtpl',
+	'Get-CentreonServiceTemplate',
+	'Initialize-CentreonHostTemplate',
+	'Invoke-Centreon',
+	'New-CentreonHost',
+	'New-CentreonHostGroup',
+	'New-CentreonSession',
+	'Remove-CentreonHost',
+	'Remove-CentreonHostMacro',
+	'Remove-CentreonHostTemplate',
+	'Set-CentreonCredential',
+	'Set-CentreonHostInstance',
+	'Set-CentreonHostMacro',
+	'Set-CentreonHostParam',
+	'Set-CentreonHostTemplate')
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = ''
