@@ -7,6 +7,7 @@ The general idea is to benefit from PowerShell's strength and ease of use, and a
 The recent release of PowerShell Core 6.0 on Linux systems allows to use PowerShell now, and even though it still lacks some features, it gets the job done.
 
 _Read this in other languages :_ [English](https://github.com/Clebam/CentreonPowerShell/blob/Development/README.md), [Français](https://github.com/Clebam/CentreonPowerShell/blob/Development/README.FR.md)
+
 __Example__
 ```
 PS /root> Get-CentreonHost | Select-Object name
