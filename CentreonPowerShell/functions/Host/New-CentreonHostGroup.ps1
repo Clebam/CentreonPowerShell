@@ -5,7 +5,7 @@
         Creates a new hostgroup
     .PARAMETER Name
         Corresponds to the hostgroup name
-    .PARAMETER Name
+    .PARAMETER Description
         Corresponds to the hostgroup description (Alias)
     .EXAMPLE
         New-CentreonHostGroup -Name "Mamoudzou_Servers" -Description "Servers located in Mamoudzou"
