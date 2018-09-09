@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the parents of a host
     .DESCRIPTION

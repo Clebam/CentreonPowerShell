@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the contacts linked to a host
     .DESCRIPTION

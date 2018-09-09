@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Sets the poller from which a host will be monitored
     .DESCRIPTION

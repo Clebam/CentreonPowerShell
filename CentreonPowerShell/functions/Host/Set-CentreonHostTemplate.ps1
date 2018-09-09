@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Sets a template to a host (REPLACE). If you want to append, use Add-CentreonHostTemplate
     .DESCRIPTION

@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Sets the macros of a host
     .DESCRIPTION

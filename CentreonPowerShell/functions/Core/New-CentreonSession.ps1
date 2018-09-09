@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         !!! The function has currently no use !!!
     .DESCRIPTION

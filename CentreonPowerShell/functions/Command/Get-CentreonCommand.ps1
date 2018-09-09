@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns a list of host templates
     .DESCRIPTION

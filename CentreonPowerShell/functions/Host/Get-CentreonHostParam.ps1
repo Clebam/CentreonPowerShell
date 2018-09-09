@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns a host parameter value
     .DESCRIPTION

@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the macros of a host
     .DESCRIPTION

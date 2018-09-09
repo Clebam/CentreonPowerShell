@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Removes a macro of a host
     .DESCRIPTION

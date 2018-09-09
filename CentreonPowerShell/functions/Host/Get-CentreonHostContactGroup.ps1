@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the contactgroups linked to a host
     .DESCRIPTION

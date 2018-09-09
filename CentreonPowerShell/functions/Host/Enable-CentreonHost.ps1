@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Enable a disabled host
     .DESCRIPTION
