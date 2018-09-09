@@ -12,8 +12,11 @@
         Version: 1.0
 #>
 function Get-CentreonCredential {
-
+    [CmdletBinding()]
     $ConfigObject = Get-PSFConfigValue -FullName CentreonPowerShell.Centreon.Credential
+    if (-not $ConfigObject) {
+        throw "Please use Set-CentreonCredential (-Register)"
+    }
     $CentreonSession = [PSCustomObject]@{
         UserName = $ConfigObject.UserName
         Password = $ConfigObject.GetNetworkCredential().Password
