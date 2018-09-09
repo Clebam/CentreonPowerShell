@@ -7,19 +7,21 @@
         Name of the host
     .PARAMETER Parameter
         Host Parameter to get
+    .PARAMETER All
+        Returns the value of all parameters
     .EXAMPLE
-        Get-CentreonHostParam -HostName "WebMdz01" -Parameter alias
+        Get-CentreonHostParameter -HostName "WebMdz01" -Parameter alias
 
         Returns the value of the parameter alias of the host WebMdz01
     .EXAMPLE
-        Get-CentreonHostParam -HostName "WebMdz01" -All
+        Get-CentreonHostParameter -HostName "WebMdz01" -All
 
         Returns the value of all parameters of the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Get-CentreonHostParam {
+function Get-CentreonHostParameter {
     [CmdletBinding(DefaultParameterSetName = "Default")]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
