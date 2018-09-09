@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Sets credentials needed to call centreon
     .DESCRIPTION
