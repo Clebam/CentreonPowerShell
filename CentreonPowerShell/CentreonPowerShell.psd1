@@ -18,7 +18,7 @@
 	Copyright = 'Copyright (c) 2018 Clebam'
 	
 	# Description of the functionality provided by this module
-	Description = 'A PowerShell module to wrap centreon commands'
+	Description = 'A PowerShell module to wrap centreon commands. Visit https://github.com/Clebam/CentreonPowerShell'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
 	PowerShellVersion = '5.0'
