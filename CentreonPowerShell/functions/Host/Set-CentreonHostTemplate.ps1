@@ -9,6 +9,8 @@
         Name of the HTPL (Host Template)
     .EXAMPLE
         Set-CentreonHostTemplate -HostName "WebMdz01" -HtplName "OS-Linux-SNMP-Custom"
+
+        Replaces the templates linked to WebMdz01 by OS-Linux-SNMP-Custom
     .NOTES
         Author: Clebam
         Version: 1.0

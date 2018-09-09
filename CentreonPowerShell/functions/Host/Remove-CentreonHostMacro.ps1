@@ -9,6 +9,8 @@
         Name of the macro
     .EXAMPLE
         Remove-CentreonHostMacro -HostName "WebMdz01" -MacroName "Warning"
+
+        Remove the macro named Warning from the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

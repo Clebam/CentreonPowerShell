@@ -11,6 +11,8 @@
         Corresponds to the variables applied to the action
     .EXAMPLE
         Invoke-Centreon -Object HOST -Action SHOW -Value "Web"
+
+        Calls : centreon -u admin -p centreon -o HOST -a SHOW -v "Web" and returns a PSObject
     .NOTES
         Author: Clebam
         Version: 1.0
@@ -44,7 +46,7 @@ function Invoke-Centreon {
     if ($Value) {
         $arguments += ' -v "' + $Value + '"'
     }
-    $Process = Invoke-Process -Process $clapi -Arguments $arguments
+    $Process = Invoke-Process -Process $clapi -Argument $arguments
 
     if ($Process.ExitCode -eq 0) {
         $Output = $Process.StandardOutput.ReadToEnd()

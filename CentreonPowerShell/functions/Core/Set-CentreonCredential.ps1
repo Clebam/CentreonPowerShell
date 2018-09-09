@@ -9,7 +9,7 @@
         Register the credentials to a configuration file (!!! Might be insecure !!!)
     .EXAMPLE
         Set-CentreonCredential -Credential (Get-Credential) -Register
-        
+
         Sets credentials for the user and stores then in a configuration file
     .NOTES
         Author: Clebam

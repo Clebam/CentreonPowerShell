@@ -9,6 +9,8 @@
         Name of the HTPL (Host Template)
     .EXAMPLE
         Add-CentreonHostTemplate -HostName "WebMdz01" -HtplName "OS-Linux-SNMP-Custom", "OS-Linux-SNMP"
+
+        This adds OS-Linux-SNMP and OS-Linux-SNMP-Custom to the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

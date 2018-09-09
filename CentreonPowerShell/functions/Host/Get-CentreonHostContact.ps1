@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Get-CentreonHostContact -HostName "WebMdz01"
+
+        Returns the contacts linked to WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

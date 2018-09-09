@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Enable-CentreonHost -HostName "WebMdz01"
+
+        It enables the host WebMdz (Parameter activate=1)
     .NOTES
         Author: Clebam
         Version: 1.0

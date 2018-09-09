@@ -15,8 +15,12 @@
         Name of the host
     .EXAMPLE
         Set-CentreonHostMacro -HostName "WebMdz01" -MacroName "Warning" -MacroValue 80 -MacroDescription "Warning threshold"
+
+        Sets the value of the macro "Warning" to 80 on the host WebMdz01 with its description
     .EXAMPLE
         Set-CentreonHostMacro -HostName "WebMdz01" -MacroName "Account" -MacroValue 1234 -MacroDescription "Account Code" -IsPassword
+
+        Sets the value of the macro "Account" to 1234 on WebMdz01. It is set as password, so it will be hidden.
     .NOTES
         Author: Clebam
         Version: 1.0

@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Initialize-CentreonHostTemplate -HostName "WebMdz01"
+
+        Applies all the templates (implies it creates the services) bound to the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Get-CentreonHostParent -HostName "WebMdz01"
+
+        Returns the parents of the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

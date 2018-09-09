@@ -7,8 +7,12 @@
         Simple string filter. No Regex (Beware, foo will return foo1, foo2, foo3)
     .EXAMPLE
         Get-CentreonCommand
+
+        Returns all the commands existing on Centreon
     .EXAMPLE
         Get-CentreonCommand -Filter "Check"
+
+        Returns all the commands with "Check" inside
     .NOTES
         Author: Clebam
         Version: 1.0

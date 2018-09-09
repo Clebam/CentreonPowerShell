@@ -8,9 +8,13 @@
     .PARAMETER Parameter
         Host Parameter to get
     .EXAMPLE
-        Get-CentreonHostParam -HostName "WebMdz01" -Param alias
+        Get-CentreonHostParam -HostName "WebMdz01" -Parameter alias
+
+        Returns the value of the parameter alias of the host WebMdz01
     .EXAMPLE
         Get-CentreonHostParam -HostName "WebMdz01" -All
+
+        Returns the value of all parameters of the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

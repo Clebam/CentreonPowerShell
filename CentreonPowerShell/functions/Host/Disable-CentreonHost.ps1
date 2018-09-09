@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Disable-CentreonHost -HostName "WebMdz01"
+
+        It disables the host WebMdz (Parameter activate=0)
     .NOTES
         Author: Clebam
         Version: 1.0

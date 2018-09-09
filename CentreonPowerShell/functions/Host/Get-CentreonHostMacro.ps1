@@ -7,6 +7,8 @@
         Name of the host
     .EXAMPLE
         Get-CentreonHostMacro -HostName "WebMdz01"
+
+        Returns the macros of the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

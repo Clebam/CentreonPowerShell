@@ -18,10 +18,12 @@
     .PARAMETER ApplyTemplate
         Triggers the generation of services linked to the template
     .EXAMPLE
-        New-CentreonHost -HostName MyHost -PollerName central
+        New-CentreonHost -HostName WebMdz01 -PollerName central
+
+        Creates a host named "WebMdz01" and link it to the poller "central"
     .EXAMPLE
         $HostConfig = @{
-            HostName = "CentreonMdz"
+            HostName = "WebMdz01"
             Description = "Mamoudzou"
             HostAddress = 192.168.1.100
             HtplName = "Centreon-Poller-Custom", "OS-Linux-SNMP"
@@ -29,6 +31,8 @@
             HostGroup = "Monitoring_Servers"
         }
         New-CentreonHost @$HostConfig
+
+        Use splatting to make the config
     .NOTES
         Author: Clebam
         Version: 1.0

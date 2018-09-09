@@ -5,6 +5,8 @@
         Returns the credential stored in config.json
     .EXAMPLE
         Get-CentreonCredential
+
+        Returns the credential needed to call centreon command
     .NOTES
         Author: Clebam
         Version: 1.0

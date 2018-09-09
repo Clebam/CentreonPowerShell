@@ -11,6 +11,8 @@
         Value applied to parameter
     .EXAMPLE
         Set-CentreonHostParam -HostName "WebMdz01" -Param alias -Value "WebServer located in Mamoudzou"
+
+        Set the parameter alias with a new value on host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

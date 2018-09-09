@@ -7,8 +7,12 @@
         Simple string filter. No Regex (Beware, foo will return foo1, foo2, foo3)
     .EXAMPLE
         Get-CentreonHost
+
+        Returns all the hosts in Centreon
     .EXAMPLE
         Get-CentreonHost -Filter "Web-Mamoudzou"
+
+        Returns the host with "Web-Mamoudzou" in their name
     .NOTES
         Author: Clebam
         Version: 1.0

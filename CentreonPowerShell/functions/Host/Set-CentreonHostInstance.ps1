@@ -9,6 +9,8 @@
         Name of the poller
     .EXAMPLE
         Set-CentreonHostInstance -HostName "WebMdz01" -PollerName Poller1
+
+        Links the host WebMdz01 to the poller Poller1
     .NOTES
         Author: Clebam
         Version: 1.0

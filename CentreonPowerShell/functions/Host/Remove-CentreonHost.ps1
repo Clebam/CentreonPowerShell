@@ -7,6 +7,8 @@
         Corresponds to the name of the host
     .EXAMPLE
         Remove-CentreonHost -HostName "WebMdz01"
+
+        Removes the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0

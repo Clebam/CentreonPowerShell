@@ -9,6 +9,8 @@
         Corresponds to the hostgroup description (Alias)
     .EXAMPLE
         New-CentreonHostGroup -Name "Mamoudzou_Servers" -Description "Servers located in Mamoudzou"
+
+        Creates a new hostgroup name "Mamoudzou_Servers" with its description
     .NOTES
         Author: Clebam
         Version: 1.0
