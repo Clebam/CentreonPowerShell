@@ -68,6 +68,7 @@
 		'Set-CentreonHostInstance',
 		'Set-CentreonHostMacro',
 		'Set-CentreonHostParameter',
+		'Set-CentreonHostParent',
 		'Set-CentreonHostTemplate')
 	
 	# Cmdlets to export from this module
