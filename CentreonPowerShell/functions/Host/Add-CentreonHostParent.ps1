@@ -1,8 +1,8 @@
 ﻿<#
     .SYNOPSIS
-        Adds a parent to a host (APPEND). If you want to replace, use Set-CentreonHost
+        Adds a parent to a host (APPEND). If you want to replace, use Set-CentreonHostParent
     .DESCRIPTION
-        Adds a parent to a host (APPEND). If you want to replace, use Set-CentreonHost
+        Adds a parent to a host (APPEND). If you want to replace, use Set-CentreonHostParent
     .PARAMETER HostName
         Name of the host
     .PARAMETER ParentName
