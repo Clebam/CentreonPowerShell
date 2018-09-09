@@ -1,4 +1,4 @@
-New-PSFLicense -Product 'CentreonPowerShell' -Manufacturer 'maitr' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2018-09-08") -Text @"
+﻿New-PSFLicense -Product 'CentreonPowerShell' -Manufacturer 'maitr' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2018-09-08") -Text @"
 Copyright (c) 2018 maitr
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
