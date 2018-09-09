@@ -28,11 +28,7 @@ function Invoke-Centreon {
         [string] $Action,
         [string] $Value
     )
-    $ModuleDirectory = (Get-Module CentreonModule).ModuleBase
-    $ConfigFilePath = Join-Path -Path $ModuleDirectory -ChildPath "Config\Config.json"
-    $ConfigFile = Get-Content -Raw -Path $ConfigFilePath
-    $ConfigObject = ConvertFrom-Json $ConfigFile
-    $clapi = $ConfigObject.centreonbinary
+    $CentreonBinary = Get-CentreonBinary
     $CentreonSession = Get-CentreonCredential
     $arguments = "-u $($CentreonSession.UserName) -p $($CentreonSession.Password)"
 
@@ -47,7 +43,7 @@ function Invoke-Centreon {
     if ($Value) {
         $arguments += ' -v "' + $Value + '"'
     }
-    $Process = Invoke-Process -Process $clapi -Argument $arguments
+    $Process = Invoke-Process -Process $CentreonBinary -Argument $arguments
 
     if ($Process.ExitCode -eq 0) {
         $Output = $Process.StandardOutput.ReadToEnd()
