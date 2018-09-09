@@ -58,7 +58,6 @@
 	'Invoke-Centreon',
 	'New-CentreonHost',
 	'New-CentreonHostGroup',
-	'New-CentreonSession',
 	'Remove-CentreonHost',
 	'Remove-CentreonHostMacro',
 	'Remove-CentreonHostTemplate',
