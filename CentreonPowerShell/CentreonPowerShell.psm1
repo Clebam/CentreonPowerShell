@@ -24,10 +24,10 @@ function Import-ModuleFile {
     Param (
         [string]
         $Path
-    )
-
-    if ($doDotSource) { . $(Resolve-Path $Path) }
-    else { $ExecutionContext.InvokeCommand.InvokeScript($false, ([scriptblock]::Create([io.file]::ReadAllText($Path))), $null, $null) }
+	)
+	
+    if ($doDotSource) { . $Path }
+    else { $ExecutionContext.InvokeCommand.InvokeScript($false, ([scriptblock]::Create([io.file]::ReadAllText($(Resolve-Path $Path)))), $null, $null) }
 }
 
 # Detect whether at some level dotsourcing was enforced
@@ -35,17 +35,17 @@ $script:doDotSource = Get-PSFConfigValue -FullName CentreonPowerShell.Import.DoD
 if ($CentreonPowerShell_dotsourcemodule) { $script:doDotSource = $true }
 
 # Execute Preimport actions
-. Import-ModuleFile -Path $(Resolve-Path "$ModuleRoot\internal\scripts\preimport.ps1")
+. Import-ModuleFile -Path "$ModuleRoot\internal\scripts\preimport.ps1"
 
 # Import all internal functions
-foreach ($function in (Get-ChildItem $(Resolve-Path "$ModuleRoot\internal\functions") -Filter "*.ps1" -Recurse -ErrorAction Ignore)) {
-    . Import-ModuleFile -Path $(Resolve-Path $($function.FullName))
+foreach ($function in (Get-ChildItem "$ModuleRoot\internal\functions" -Filter "*.ps1" -Recurse -ErrorAction Ignore)) {
+    . Import-ModuleFile -Path $function.FullName
 }
 
 # Import all public functions
-foreach ($function in (Get-ChildItem $(Resolve-Path "$ModuleRoot\functions") -Filter "*.ps1" -Recurse -ErrorAction Ignore)) {
-    . Import-ModuleFile -Path $(Resolve-Path $($function.FullName))
+foreach ($function in (Get-ChildItem "$ModuleRoot\functions" -Filter "*.ps1" -Recurse -ErrorAction Ignore)) {
+    . Import-ModuleFile -Path $function.FullName
 }
 
 # Execute Postimport actions
-. Import-ModuleFile -Path $(Resolve-Path "$ModuleRoot\internal\scripts\postimport.ps1")
+. Import-ModuleFile -Path "$ModuleRoot\internal\scripts\postimport.ps1"
