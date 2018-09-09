@@ -18,7 +18,8 @@ Write-PSFMessage -Level Important -Message "Importing Module"
 Remove-Module CentreonPowerShell -ErrorAction Ignore
 Import-Module "$PSScriptRoot\..\CentreonPowerShell.psd1"
 Import-Module "$PSScriptRoot\..\CentreonPowerShell.psm1" -Force
-
+$TestResultsPath = "$PSScriptRoot\..\..\TestResults"
+	if (-not (Test-Path $TestResultsPath)){New-Item -ItemType Directory -Path $TestResultsPath}
 $totalFailed = 0
 $totalRun = 0
 
@@ -29,8 +30,6 @@ Write-PSFMessage -Level Important -Message "Modules imported, proceeding with ge
 foreach ($file in (Get-ChildItem "$PSScriptRoot\general" -Filter "*.Tests.ps1"))
 {
 	Write-PSFMessage -Level Significant -Message "  Executing <c='em'>$($file.Name)</c>"
-	$TestResultsPath = "$PSScriptRoot\..\..\TestResults"
-	if (-not (Test-Path $TestResultsPath)){New-Item -ItemType Directory -Path $TestResultsPath}
 	$TestOuputFile = Join-Path $TestResultsPath "TEST-$($file.BaseName).xml"
 	$results = Invoke-Pester -Script $file.FullName -Show $Show -PassThru -OutputFile $TestOuputFile -OutputFormat NUnitXml
 	foreach ($result in $results)
@@ -59,7 +58,8 @@ foreach ($file in (Get-ChildItem "$PSScriptRoot\functions" -Recurse -File -Filte
 	if ($file.Name -like $Exclude) { continue }
 	
 	Write-PSFMessage -Level Significant -Message "  Executing $($file.Name)"
-	$results = Invoke-Pester -Script $file.FullName -Show None -PassThru
+	$TestOuputFile = Join-Path $TestResultsPath "TEST-$($file.BaseName).xml"
+	$results = Invoke-Pester -Script $file.FullName -Show None -PassThru -OutputFile $TestOuputFile -OutputFormat NUnitXml
 	foreach ($result in $results)
 	{
 		$totalRun += $result.TotalCount
