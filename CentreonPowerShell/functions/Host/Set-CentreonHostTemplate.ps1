@@ -29,5 +29,7 @@ function Set-CentreonHostTemplate {
         [string[]] $HtplName
     )
     $HtplName = $HtplName -join "|"
-    Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$HostName;$HtplName"
+    if ($PSCmdlet.ShouldProcess($HostName)) {
+        Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$HostName;$HtplName"
+    }
 }

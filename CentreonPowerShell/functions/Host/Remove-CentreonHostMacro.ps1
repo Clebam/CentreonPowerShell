@@ -29,5 +29,7 @@ function Remove-CentreonHostMacro {
         [ValidateNotNullOrEmpty()]
         [string] $MacroName
     )
-    Invoke-Centreon -Object HOST -Action DELMACRO -Value "$HostName;$MacroName"
+    if ($PSCmdlet.ShouldProcess($HostName)) {
+        Invoke-Centreon -Object HOST -Action DELMACRO -Value "$HostName;$MacroName"
+    }
 }

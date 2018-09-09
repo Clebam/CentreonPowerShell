@@ -29,5 +29,7 @@ function Remove-CentreonHostTemplate {
         [string[]] $HtplName
     )
     $HtplName = $HtplName -join "|"
-    Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$HostName;$HtplName"
+    if ($PSCmdlet.ShouldProcess($HostName)) {
+        Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$HostName;$HtplName"
+    }
 }

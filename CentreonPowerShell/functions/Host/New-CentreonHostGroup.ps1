@@ -29,5 +29,7 @@ function New-CentreonHostGroup {
         [string] $Description
     )
     $Value = "$Description;$Name"
-    Invoke-Centreon -Object HG -Action ADD -Value $Value
+    if ($PSCmdlet.ShouldProcess($HostName)) {
+        Invoke-Centreon -Object HG -Action ADD -Value $Value
+    }
 }

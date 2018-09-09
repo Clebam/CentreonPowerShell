@@ -60,10 +60,14 @@ function New-CentreonHost {
         [string[]] $HostGroup,
         [switch]$ApplyTemplate
     )
-    $HtplName = $HtplName -join "|"
-    $HostGroup = $HostGroup -join "|"
-    Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$HtplName;$PollerName;$HostGroup"
-    if ($ApplyTemplate) {
-        Invoke-Centreon -Object HOST -Action APPLYTPL -Value $HostName
+    if ($HtplName) {$HtplName = $HtplName -join "|"}
+    if ($HostGroup) {$HostGroup = $HostGroup -join "|"}
+
+    if ($PSCmdlet.ShouldProcess($HostName)) {
+        Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$HtplName;$PollerName;$HostGroup"
+
+        if ($ApplyTemplate) {
+            Invoke-Centreon -Object HOST -Action APPLYTPL -Value $HostName
+        }
     }
 }

@@ -27,9 +27,10 @@ function Set-CentreonCredential {
         [pscredential] $Credential,
         [switch] $Register
     )
-
-    Set-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Credential' -Value $Credential
-    if ($Register) {
-        Register-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Credential'
+    if ($PSCmdlet.ShouldProcess("Config")) {
+        Set-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Credential' -Value $Credential
+        if ($Register) {
+            Register-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Credential'
+        }
     }
 }

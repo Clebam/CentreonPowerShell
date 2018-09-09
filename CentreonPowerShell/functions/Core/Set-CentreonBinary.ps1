@@ -27,9 +27,10 @@ function Set-CentreonBinary {
         [string] $Binary,
         [switch] $Register
     )
-
-    Set-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Binary' -Value $Binary
-    if ($Register) {
-        Register-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Binary'
+    if ($PSCmdlet.ShouldProcess("Config")) {
+        Set-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Binary' -Value $Binary
+        if ($Register) {
+            Register-PSFConfig -Module 'CentreonPowerShell' -Name 'Centreon.Binary'
+        }
     }
 }
