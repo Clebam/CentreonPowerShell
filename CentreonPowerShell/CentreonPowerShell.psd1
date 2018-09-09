@@ -9,13 +9,13 @@
 	GUID = 'dd9c2e54-3fc0-44a0-871f-4a88bf0e9fc2'
 	
 	# Author of this module
-	Author = 'maitr'
+	Author = 'Clebam'
 	
 	# Company or vendor of this module
-	CompanyName = 'MyCompany'
+	CompanyName = 'BamShell'
 	
 	# Copyright statement for this module
-	Copyright = 'Copyright (c) 2018 maitr'
+	Copyright = 'Copyright (c) 2018 Clebam'
 	
 	# Description of the functionality provided by this module
 	Description = 'A PowerShell module to wrap centreon commands'
