@@ -29,8 +29,10 @@ Write-PSFMessage -Level Important -Message "Modules imported, proceeding with ge
 foreach ($file in (Get-ChildItem "$PSScriptRoot\general" -Filter "*.Tests.ps1"))
 {
 	Write-PSFMessage -Level Significant -Message "  Executing <c='em'>$($file.Name)</c>"
-	#$TestOuputFile = Join-Path "$PSScriptRoot\..\..\TestResults" "TEST-$($file.BaseName).xml"
-	$results = Invoke-Pester -Script $file.FullName -Show $Show -PassThru -OutputFile "$PSScriptRoot\..\..\TestResults\TEST-$($file.BaseName).xml" -OutputFormat NUnitXml
+	$TestResultsPath = "$PSScriptRoot\..\..\TestResults"
+	if (-not (Test-Path $TestResultsPath)){New-Item -ItemType Directory -Path $TestResultsPath}
+	$TestOuputFile = Join-Path $TestResultsPath "TEST-$($file.BaseName).xml"
+	$results = Invoke-Pester -Script $file.FullName -Show $Show -PassThru -OutputFile $TestOuputFile -OutputFormat NUnitXml
 	foreach ($result in $results)
 	{
 		$totalRun += $result.TotalCount
