@@ -18,6 +18,7 @@
         Version: 1.0
 #>
 function Set-CentreonHostParameter {
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

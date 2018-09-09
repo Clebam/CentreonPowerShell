@@ -16,7 +16,7 @@
         Version: 1.0
 #>
 function Set-CentreonCredential {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]

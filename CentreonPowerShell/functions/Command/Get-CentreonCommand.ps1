@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns a list of host templates
     .DESCRIPTION
@@ -18,6 +18,7 @@
         Version: 1.0
 #>
 function Get-CentreonCommand {
+    [CmdletBinding()]
     param (
         [string] $Filter
     )

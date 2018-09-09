@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns the macros of a host
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Get-CentreonHostMacro {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

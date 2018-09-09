@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Adds a template to a host (APPEND). If you want to replace, use Set-CentreonHostTemplate
     .DESCRIPTION
@@ -16,6 +16,7 @@
         Version: 1.0
 #>
 function Add-CentreonHostTemplate {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

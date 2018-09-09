@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Invokes centreon binary to run commands
     .DESCRIPTION
@@ -18,6 +18,7 @@
         Version: 1.0
 #>
 function Invoke-Centreon {
+    [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]

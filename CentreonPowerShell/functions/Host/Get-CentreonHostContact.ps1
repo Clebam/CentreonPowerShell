@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns the contacts linked to a host
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Get-CentreonHostContact {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

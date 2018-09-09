@@ -16,6 +16,7 @@
         Version: 1.0
 #>
 function New-CentreonHostGroup {
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]

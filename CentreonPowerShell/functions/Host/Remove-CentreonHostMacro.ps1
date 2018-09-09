@@ -16,6 +16,7 @@
         Version: 1.0
 #>
 function Remove-CentreonHostMacro {
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

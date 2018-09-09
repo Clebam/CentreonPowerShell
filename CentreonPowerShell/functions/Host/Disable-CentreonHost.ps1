@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Disable a enabled host
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Disable-CentreonHost {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

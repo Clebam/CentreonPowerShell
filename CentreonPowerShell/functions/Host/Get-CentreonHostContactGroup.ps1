@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns the contactgroups linked to a host
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Get-CentreonHostContactGroup {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

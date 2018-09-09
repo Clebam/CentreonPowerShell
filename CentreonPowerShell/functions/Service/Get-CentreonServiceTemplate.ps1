@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns a list of service templates
     .DESCRIPTION
@@ -18,6 +18,7 @@
         Version: 1.0
 #>
 function Get-CentreonStpl {
+    [CmdletBinding()]
     param (
         [string] $Filter
     )

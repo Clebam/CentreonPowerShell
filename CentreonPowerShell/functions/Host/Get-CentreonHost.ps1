@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns a list of hosts
     .DESCRIPTION
@@ -18,6 +18,7 @@
         Version: 1.0
 #>
 function Get-CentreonHost {
+    [CmdletBinding()]
     param (
         [string] $Filter
     )

@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Returns the hostgroups that a host is linked to
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Get-CentreonHostHG {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

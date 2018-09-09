@@ -26,6 +26,7 @@
         Version: 1.0
 #>
 function Set-CentreonHostMacro {
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]

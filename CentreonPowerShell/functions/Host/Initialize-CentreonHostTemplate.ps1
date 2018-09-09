@@ -1,4 +1,4 @@
-﻿<#
+<#
     .SYNOPSIS
         Applies templates linked to a host
     .DESCRIPTION
@@ -14,6 +14,7 @@
         Version: 1.0
 #>
 function Initialize-CentreonHostTemplate {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
