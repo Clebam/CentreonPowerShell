@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Invokes centreon binary to run commands
     .DESCRIPTION

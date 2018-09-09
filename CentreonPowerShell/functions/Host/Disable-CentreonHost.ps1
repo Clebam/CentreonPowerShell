@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Disable a enabled host
     .DESCRIPTION

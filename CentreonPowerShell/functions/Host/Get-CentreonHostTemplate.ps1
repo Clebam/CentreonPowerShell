@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the templates bound to a host
     .DESCRIPTION

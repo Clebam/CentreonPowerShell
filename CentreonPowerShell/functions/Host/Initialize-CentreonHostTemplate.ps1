@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Applies templates linked to a host
     .DESCRIPTION

@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Returns the hostgroups that a host is linked to
     .DESCRIPTION
