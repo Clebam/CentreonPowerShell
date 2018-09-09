@@ -49,7 +49,7 @@
 	'Get-CentreonHostContactGroup',
 	'Get-CentreonHostHG',
 	'Get-CentreonHostMacro',
-	'Get-CentreonHostParam',
+	'Get-CentreonHostParameter',
 	'Get-CentreonHostParent',
 	'Get-CentreonHostTemplate',
 	'Get-CentreonHtpl',
@@ -64,7 +64,7 @@
 	'Set-CentreonCredential',
 	'Set-CentreonHostInstance',
 	'Set-CentreonHostMacro',
-	'Set-CentreonHostParam',
+	'Set-CentreonHostParameter',
 	'Set-CentreonHostTemplate')
 	
 	# Cmdlets to export from this module
