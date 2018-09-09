@@ -25,5 +25,5 @@ function Add-CentreonHostParent {
         [string[]] $ParentName
     )
     $ParentName = $ParentName -join "|"
-    Invoke-Centreon -Object HOST -Action ADDTEMPLATE -Value "$HostName;$ParentName"
+    Invoke-Centreon -Object HOST -Action ADDPARENT -Value "$HostName;$ParentName"
 }
