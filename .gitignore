@@ -4,6 +4,9 @@
 *.psproj
 *TempPoint*
 
+# Ignore test results
+TestResults/*
+
 # Ignore staging info from Visual Studio
 library/CentreonPowerShell/.vs/*
 library/CentreonPowerShell/CentreonPowerShell/bin/*
