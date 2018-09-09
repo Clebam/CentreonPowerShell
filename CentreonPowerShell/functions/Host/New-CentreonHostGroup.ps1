@@ -7,6 +7,10 @@
         Corresponds to the hostgroup name
     .PARAMETER Description
         Corresponds to the hostgroup description (Alias)
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         New-CentreonHostGroup -Name "Mamoudzou_Servers" -Description "Servers located in Mamoudzou"
 

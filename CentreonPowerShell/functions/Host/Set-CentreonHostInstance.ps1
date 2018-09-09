@@ -7,6 +7,10 @@
         Name of the host
     .PARAMETER PollerName
         Name of the poller
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Set-CentreonHostInstance -HostName "WebMdz01" -PollerName Poller1
 

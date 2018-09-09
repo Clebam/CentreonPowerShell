@@ -9,6 +9,10 @@
         Host Parameter to set
     .PARAMETER Value
         Value applied to parameter
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Set-CentreonHostParameter -HostName "WebMdz01" -Param alias -Value "WebServer located in Mamoudzou"
 

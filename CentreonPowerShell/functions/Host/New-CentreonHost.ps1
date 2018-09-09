@@ -17,6 +17,10 @@
         Corresponds to the hostgroup the host will be member of
     .PARAMETER ApplyTemplate
         Triggers the generation of services linked to the template
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         New-CentreonHost -HostName WebMdz01 -PollerName central
 

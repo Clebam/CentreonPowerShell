@@ -7,6 +7,10 @@
         Name of the host
     .PARAMETER HtplName
         Name of the HTPL (Host Template)
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Set-CentreonHostTemplate -HostName "WebMdz01" -HtplName "OS-Linux-SNMP-Custom"
 

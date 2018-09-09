@@ -5,6 +5,10 @@
         Removes an existing host
     .PARAMETER HostName
         Corresponds to the name of the host
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Remove-CentreonHost -HostName "WebMdz01"
 

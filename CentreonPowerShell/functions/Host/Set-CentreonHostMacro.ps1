@@ -13,6 +13,10 @@
         Define if the value should be considered as password and hidden
     .PARAMETER MacroDescription
         Name of the host
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Set-CentreonHostMacro -HostName "WebMdz01" -MacroName "Warning" -MacroValue 80 -MacroDescription "Warning threshold"
 
