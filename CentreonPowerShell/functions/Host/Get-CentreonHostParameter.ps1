@@ -81,15 +81,6 @@ function Get-CentreonHostParameter {
         $Parameter = (Get-Variable "Parameter").Attributes.ValidValues
     }  #Waiting for all params to be available in GETPARAM
 
-    $ParameterValue = @()
-    foreach ($param in $Parameter) {
-        $Result = Invoke-Centreon -Object HOST -Action GETPARAM -Value "$HostName;$param"
-        $Result = $Result -split ":"
-        $PSObject = [PSCustomObject]@{
-            Parameter = ($Result[0]).TrimEnd()
-            Value     = ($Result[1]).TrimStart()
-        }
-        $ParameterValue += $PSObject
-    }
-    $ParameterValue
+    $Param = $Parameter -join "|"
+    Invoke-Centreon -Object HOST -Action GETPARAM -Value "$HostName;$Param" -NonCsvOutput | ConvertFrom-Csv -Delimiter ":" -Header "Parameter", "Value"
 }
