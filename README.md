@@ -23,33 +23,60 @@ Switch01
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
 # Work In Progress
-[ ] Acl [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html){:target="_blank"}
+[ ] Acl [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
+
 [ ] AclGroup
+
 [ ] CentreonBrokerCfg
+
 [ ] CgiCfg
+
 [ ] Command
+
 [ ] Contact
+
 [ ] ContactGroup
+
 [ ] Core
+
 [ ] Dependency
+
 [ ] Downtime
+
 [x] Host
+
 [ ] HostCategory
+
 [ ] HostGroup
+
 [ ] HostTemplate
+
 [ ] Instance
+
 [ ] LdapCfg
+
 [ ] NagiosCfg
+
 [ ] Ndo2dbCfg
+
 [ ] NdomodCfg
+
 [ ] ResourceCfg
+
 [ ] Service
+
 [ ] ServiceCategory
+
 [ ] ServiceGroup
+
 [ ] ServiceTemplate
+
 [ ] Settings
+
 [ ] TimePeriod
+
 [ ] Trap
+
 [ ] Vendor
 
 
