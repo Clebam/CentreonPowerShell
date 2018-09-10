@@ -23,90 +23,90 @@ Switch01
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
 # Work In Progress
-- Acl - Includes [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
-	[ ] Translating
-	[ ] Controlling
+- Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
+	- [ ] Translating
+	- [ ] Controlling
 - AclGroup
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - CentreonBrokerCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - CgiCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Command
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Contact
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - ContactGroup
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Core
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Dependency
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Downtime
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Host
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - HostCategory
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - HostGroup
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - HostTemplate
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Instance
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - LdapCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - NagiosCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Ndo2dbCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - NdomodCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - ResourceCfg
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Service
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - ServiceCategory
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - ServiceGroup
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - ServiceTemplate
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Settings
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - TimePeriod
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Trap
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 - Vendor
-	[ ] Translating
-	[ ] Controlling
+	- [ ] Translating
+	- [ ] Controlling
 
 
 # To do
