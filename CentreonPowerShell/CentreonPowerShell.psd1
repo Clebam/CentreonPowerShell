@@ -40,8 +40,11 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @('Add-CentreonHostCG',
+		'Add-CentreonHostContact',
+		'Add-CentreonHostHG',
 		'Add-CentreonHostHtpl',
 		'Add-CentreonHostParent',
+		'Clear-CentreonHostSeverity',
 		'Disable-CentreonHost',
 		'Enable-CentreonHost',
 		'Get-CentreonBinary',
@@ -63,17 +66,22 @@
 		'New-CentreonHostGroup',
 		'Remove-CentreonHost',
 		'Remove-CentreonHostCG',
+		'Remove-CentreonHostContact',
+		'Remove-CentreonHostHG',
 		'Remove-CentreonHostHtpl',
 		'Remove-CentreonHostMacro',
 		'Remove-CentreonHostParent',
 		'Set-CentreonBinary',
 		'Set-CentreonCredential',
 		'Set-CentreonHostCG',
+		'Set-CentreonHostContact',
+		'Set-CentreonHostHG',
 		'Set-CentreonHostHtpl',
 		'Set-CentreonHostInstance',
 		'Set-CentreonHostMacro',
 		'Set-CentreonHostParameter',
-		'Set-CentreonHostParent')
+		'Set-CentreonHostParent',
+		'Set-CentreonHostSeverity')
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = ''
