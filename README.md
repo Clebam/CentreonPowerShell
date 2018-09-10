@@ -22,8 +22,8 @@ Switch01
 
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
-# Work In Progress
-- Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
+# Work In Progress (2%)
+- Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)[Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html)[Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html)[Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
 	- [ ] Translating
 	- [ ] Controlling
 - AclGroup
@@ -54,7 +54,7 @@ PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 	- [ ] Translating
 	- [ ] Controlling
 - Host
-	- [ ] Translating
+	- [x] Translating
 	- [ ] Controlling
 - HostCategory
 	- [ ] Translating
