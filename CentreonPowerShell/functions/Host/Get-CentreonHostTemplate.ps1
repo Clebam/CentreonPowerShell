@@ -1,14 +1,18 @@
 ﻿<#
     .SYNOPSIS
-        Returns the templates bound to a host
+        Returns a list of host templates
     .DESCRIPTION
-        Returns the templates bound to a host
-    .PARAMETER HostName
-        Name of the host
+        Returns a list of host templates
+    .PARAMETER Filter
+        Simple string filter. No Regex (Beware, foo will return foo1, foo2, foo3)
     .EXAMPLE
-        Get-CentreonHostTemplate -HostName "WebMdz01"
+        Get-CentreonHostTemplate
 
-        Returns the templates bound to WebMdz01
+        Returns all the host templates of Centreon
+    .EXAMPLE
+        Get-CentreonHostTemplate -Filter "Web"
+
+        Returns the host templates with "Web" in their names
     .NOTES
         Author: Clebam
         Version: 1.0
@@ -16,9 +20,12 @@
 function Get-CentreonHostTemplate {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
-        [ValidateNotNullOrEmpty()]
-        [string] $HostName
+        [string] $Filter
     )
-    Invoke-Centreon -Object HOST -Action GETTEMPLATE -Value $HostName
+    if ($Filter) {
+        Invoke-Centreon -Object HTPL -Action SHOW -Value $Filter
+    }
+    else {
+        Invoke-Centreon -Object HTPL -Action SHOW
+    }
 }

@@ -5,31 +5,31 @@
         Removes a template bound to a host
     .PARAMETER HostName
         Name of the host
-    .PARAMETER HtplName
-        Name of the HTPL (Host Template)
+    .PARAMETER HostTemplate
+        Name of the Host Template
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonHostTemplate -HostName "WebMdz01" -HtplName "OS-Linux-SNMP-Custom", "OS-Linux-SNMP"
+        Remove-CentreonHtpl -HostName "WebMdz01" -HostTemplate "OS-Linux-SNMP-Custom", "OS-Linux-SNMP"
 
         Removes the templates OS-Linux-SNMP-Custom and OS-Linux-SNMP from the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHostTemplate {
+function Remove-CentreonHtpl {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [string] $HostName,
         [ValidateNotNullOrEmpty()]
-        [string[]] $HtplName
+        [string[]] $HostTemplate
     )
-    $HtplName = $HtplName -join "|"
+    $HostTemplate = $HostTemplate -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$HostName;$HtplName"
+        Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$HostName;$HostTemplate"
     }
 }
