@@ -1,8 +1,8 @@
 ﻿<#
     .SYNOPSIS
-        Adds a contact groups to a host (APPEND). If you want to replace, use Set-CentreonContactGroup
+        Adds a contact groups to a host (APPEND). If you want to replace, use Set-CentreonHostCG
     .DESCRIPTION
-        Adds a contact groups to a host (APPEND). If you want to replace, use Set-CentreonContactGroup
+        Adds a contact groups to a host (APPEND). If you want to replace, use Set-CentreonHostCG
     .PARAMETER HostName
         Name of the host
     .PARAMETER ContactGroup
