@@ -23,88 +23,88 @@ Switch01
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
 # Work In Progress (2%)
-- Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)[Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html)[Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html)[Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
+- Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html), [Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html), [Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html), [Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
 	- [ ] Translating
 	- [ ] Controlling
-- AclGroup
+- AclGroup - Includes : [ACL Groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_group.html)
 	- [ ] Translating
 	- [ ] Controlling
-- CentreonBrokerCfg
+- CentreonBrokerCfg - Includes : [Centreon broker](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/broker_cfg.html)
 	- [ ] Translating
 	- [ ] Controlling
-- CgiCfg
+- CgiCfg - Includes : [CGI CFG](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/cgi_cfg.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Command
+- Command - Includes : [Commands](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/commands.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Contact
+- Contact - Includes : [Contacts](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/contacts.html), [Contact templates](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/contact_templates.html)
 	- [ ] Translating
 	- [ ] Controlling
-- ContactGroup
+- ContactGroup - Includes : [Contact Groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/contact_groups.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Core
+- Core - Includes : Module related functions
 	- [ ] Translating
 	- [ ] Controlling
-- Dependency
+- Dependency - Includes : [Dependencies](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/dependencies.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Downtime
+- Downtime - Includes : [Downtimes](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/downtimes.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Host
-	- [x] Translating
-	- [ ] Controlling
-- HostCategory
+- Host - Includes : [Hosts](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/hosts.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- HostGroup
+- HostCategory - Includes : [Host categories](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_categories.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- HostTemplate
+- HostGroup - Includes : [Host groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_groups.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Instance
+- HostTemplate - Includes : [Host templates](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_templates.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- LdapCfg
+- Instance - Includes : [Instances (Pollers)](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/instances.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- NagiosCfg
+- LdapCfg - Includes : [LDAP configuration](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/ldap_servers.html)
 	- [ ] Translating
 	- [ ] Controlling
-- Ndo2dbCfg
+- NagiosCfg - Includes : [Nagios CFG](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/nagios_cfg.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- NdomodCfg
+- Ndo2dbCfg - Includes : [Ndo2db CFG](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/ndo2db_cfg.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- ResourceCfg
+- NdomodCfg - Includes : [Ndomod CFG](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/ndomod_cfg.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Service
+- ResourceCfg - Includes : [Resource CFG](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/resource_cfg.htm) 
 	- [ ] Translating
 	- [ ] Controlling
-- ServiceCategory
+- Service - Includes : [Services](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/services.html), [Host group services](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_group_services.html)
 	- [ ] Translating
 	- [ ] Controlling
-- ServiceGroup
+- ServiceCategory - Includes : [Service categories](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/service_categories.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- ServiceTemplate
+- ServiceGroup - Includes : [Service groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/service_groups.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Settings
+- ServiceTemplate - Includes : [Service templates](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/service_templates.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- TimePeriod
+- Settings - Includes : [Settings](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/settings.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Trap
+- TimePeriod - Includes : [Time periods](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/time_periods.html) 
 	- [ ] Translating
 	- [ ] Controlling
-- Vendor
+- Trap - Includes : [Traps](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/traps.html) 
+	- [ ] Translating
+	- [ ] Controlling
+- Vendor - Includes : [Vendors](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/vendors.html) 
 	- [ ] Translating
 	- [ ] Controlling
 
