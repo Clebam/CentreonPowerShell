@@ -9,6 +9,8 @@
         Corresponds to the action applied to the object
     .PARAMETER Value
         Corresponds to the variables applied to the action
+    .PARAMETER NonCsvOutput
+        Activate if the centreon command called returns a non csv output
     .EXAMPLE
         Invoke-Centreon -Object HOST -Action SHOW -Value "Web"
 
@@ -26,7 +28,10 @@ function Invoke-Centreon {
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $Action,
-        [string] $Value
+        [ValidateNotNullOrEmpty()]
+        [string] $Value,
+        [switch] $NonCsvOutput
+
     )
     $CentreonBinary = Get-CentreonBinary
     $CentreonSession = Get-CentreonCredential
@@ -48,11 +53,11 @@ function Invoke-Centreon {
     if ($Process.ExitCode -eq 0) {
         $Output = $Process.StandardOutput.ReadToEnd()
         $CsvOutput = $Output | ConvertFrom-Csv -Delimiter ";"
-        if ($CsvOutput) {
-            $CsvOutput
+        if ($NonCsvOutput) {
+            $Output
         }
         else {
-            $Output
+            $CsvOutput
         }
     }
     else {
