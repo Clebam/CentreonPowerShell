@@ -9,7 +9,7 @@
         Corresponds to the description of the host (Alias)
     .PARAMETER HostAddress
         Corresponds to the DNS Name or IP Address of the host
-    .PARAMETER HtplName
+    .PARAMETER HostTemplate
         Name of the HTPL (Host Template)
     .PARAMETER PollerName
         Corresponds to the name of the poller
@@ -30,7 +30,7 @@
             HostName = "WebMdz01"
             Description = "Mamoudzou"
             HostAddress = 192.168.1.100
-            HtplName = "Centreon-Poller-Custom", "OS-Linux-SNMP"
+            HostTemplate = "Centreon-Poller-Custom", "OS-Linux-SNMP"
             PollerName = "central"
             HostGroup = "Monitoring_Servers"
         }
@@ -52,7 +52,7 @@ function New-CentreonHost {
         [ValidateNotNullOrEmpty()]
         [string] $HostAddress,
         [ValidateNotNullOrEmpty()]
-        [string[]] $HtplName,
+        [string[]] $HostTemplate,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $PollerName,
@@ -60,11 +60,11 @@ function New-CentreonHost {
         [string[]] $HostGroup,
         [switch]$ApplyTemplate
     )
-    if ($HtplName) {$HtplName = $HtplName -join "|"}
+    if ($HostTemplate) {$HostTemplate = $HostTemplate -join "|"}
     if ($HostGroup) {$HostGroup = $HostGroup -join "|"}
 
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$HtplName;$PollerName;$HostGroup"
+        Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$HostTemplate;$PollerName;$HostGroup"
 
         if ($ApplyTemplate) {
             Invoke-Centreon -Object HOST -Action APPLYTPL -Value $HostName
