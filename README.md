@@ -23,35 +23,90 @@ Switch01
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
 # Work In Progress
-
-- [ ] Acl [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
-- [ ] AclGroup
-- [ ] CentreonBrokerCfg
-- [ ] CgiCfg
-- [ ] Command
-- [ ] Contact
-- [ ] ContactGroup
-- [ ] Core
-- [ ] Dependency
-- [ ] Downtime
-- [x] Host
-- [ ] HostCategory
-- [ ] HostGroup
-- [ ] HostTemplate
-- [ ] Instance
-- [ ] LdapCfg
-- [ ] NagiosCfg
-- [ ] Ndo2dbCfg
-- [ ] NdomodCfg
-- [ ] ResourceCfg
-- [ ] Service
-- [ ] ServiceCategory
-- [ ] ServiceGroup
-- [ ] ServiceTemplate
-- [ ] Settings
-- [ ] TimePeriod
-- [ ] Trap
-- [ ] Vendor
+- Acl - Includes [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html)
+	[ ] Translating
+	[ ] Controlling
+- AclGroup
+	[ ] Translating
+	[ ] Controlling
+- CentreonBrokerCfg
+	[ ] Translating
+	[ ] Controlling
+- CgiCfg
+	[ ] Translating
+	[ ] Controlling
+- Command
+	[ ] Translating
+	[ ] Controlling
+- Contact
+	[ ] Translating
+	[ ] Controlling
+- ContactGroup
+	[ ] Translating
+	[ ] Controlling
+- Core
+	[ ] Translating
+	[ ] Controlling
+- Dependency
+	[ ] Translating
+	[ ] Controlling
+- Downtime
+	[ ] Translating
+	[ ] Controlling
+- Host
+	[ ] Translating
+	[ ] Controlling
+- HostCategory
+	[ ] Translating
+	[ ] Controlling
+- HostGroup
+	[ ] Translating
+	[ ] Controlling
+- HostTemplate
+	[ ] Translating
+	[ ] Controlling
+- Instance
+	[ ] Translating
+	[ ] Controlling
+- LdapCfg
+	[ ] Translating
+	[ ] Controlling
+- NagiosCfg
+	[ ] Translating
+	[ ] Controlling
+- Ndo2dbCfg
+	[ ] Translating
+	[ ] Controlling
+- NdomodCfg
+	[ ] Translating
+	[ ] Controlling
+- ResourceCfg
+	[ ] Translating
+	[ ] Controlling
+- Service
+	[ ] Translating
+	[ ] Controlling
+- ServiceCategory
+	[ ] Translating
+	[ ] Controlling
+- ServiceGroup
+	[ ] Translating
+	[ ] Controlling
+- ServiceTemplate
+	[ ] Translating
+	[ ] Controlling
+- Settings
+	[ ] Translating
+	[ ] Controlling
+- TimePeriod
+	[ ] Translating
+	[ ] Controlling
+- Trap
+	[ ] Translating
+	[ ] Controlling
+- Vendor
+	[ ] Translating
+	[ ] Controlling
 
 
 # To do
