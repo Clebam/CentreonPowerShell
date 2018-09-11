@@ -25,12 +25,14 @@ function Set-CentreonHostSeverity {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $Severity
     )
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETSEVERITY -Value "$HostName;$Severity"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETSEVERITY -Value "$_hostname;$Severity"
+        }
     }
 }

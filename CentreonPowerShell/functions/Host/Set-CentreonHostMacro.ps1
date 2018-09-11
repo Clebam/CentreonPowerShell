@@ -35,7 +35,7 @@ function Set-CentreonHostMacro {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $MacroName,
@@ -50,6 +50,8 @@ function Set-CentreonHostMacro {
         $IsPasswordValue = 0
     }
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETMACRO -Value "$HostName;$MacroName;$MacroValue;$IsPasswordValue;$MacroDescription"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETMACRO -Value "$_hostname;$MacroName;$MacroValue;$IsPasswordValue;$MacroDescription"
+        }
     }
 }

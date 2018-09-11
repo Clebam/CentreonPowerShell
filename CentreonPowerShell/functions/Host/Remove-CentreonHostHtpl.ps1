@@ -25,12 +25,14 @@ function Remove-CentreonHtpl {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
     $HostTemplate = $HostTemplate -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$HostName;$HostTemplate"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$_hostname;$HostTemplate"
+        }
     }
 }

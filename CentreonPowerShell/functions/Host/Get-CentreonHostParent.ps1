@@ -19,7 +19,9 @@ function Get-CentreonHostParent {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string] $HostName
+        [string[]] $HostName
     )
-    Invoke-Centreon -Object HOST -Action GETPARENT -Value $HostName
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action GETPARENT -Value $_hostname
+    }
 }

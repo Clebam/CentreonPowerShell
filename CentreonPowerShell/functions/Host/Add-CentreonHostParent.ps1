@@ -21,10 +21,12 @@ function Add-CentreonHostParent {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $ParentName
     )
     $ParentName = $ParentName -join "|"
-    Invoke-Centreon -Object HOST -Action ADDPARENT -Value "$HostName;$ParentName"
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action ADDPARENT -Value "$_hostname;$ParentName"
+    }
 }

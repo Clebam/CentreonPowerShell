@@ -21,10 +21,12 @@ function Add-CentreonHostHtpl {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
     $HostTemplate = $HostTemplate -join "|"
-    Invoke-Centreon -Object HOST -Action ADDTEMPLATE -Value "$HostName;$HostTemplate"
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action ADDTEMPLATE -Value "$_hostname;$HostTemplate"
+    }
 }

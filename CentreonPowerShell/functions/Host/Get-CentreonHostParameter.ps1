@@ -27,7 +27,7 @@ function Get-CentreonHostParameter {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory, ParameterSetName = "Default")]
         [ValidateSet("2d_coords",
             "3d_coords",
@@ -83,5 +83,7 @@ function Get-CentreonHostParameter {
     }
 
     $Parameter = $Parameter -join "|"
-    [pscustomobject]((Invoke-Centreon -Object HOST -Action GETPARAM -Value "$HostName;$Parameter" -NonCsvOutput) -replace ":", "=" | Sort-Object | ConvertFrom-StringData)
+    foreach ($_hostname in $HostName) {
+        [pscustomobject]((Invoke-Centreon -Object HOST -Action GETPARAM -Value "$_hostname;$Parameter" -NonCsvOutput) -replace ":", "=" | Sort-Object | ConvertFrom-StringData)
+    }
 }

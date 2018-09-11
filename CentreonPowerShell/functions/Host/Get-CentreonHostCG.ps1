@@ -19,7 +19,9 @@ function Get-CentreonHostCG {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string] $HostName
+        [string[]] $HostName
     )
-    Invoke-Centreon -Object HOST -Action GETCONTACTGROUP -Value $HostName
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action GETCONTACTGROUP -Value $_hostname
+    }
 }

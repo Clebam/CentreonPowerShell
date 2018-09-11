@@ -25,12 +25,14 @@ function Set-CentreonHostHtpl {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
     $HostTemplate = $HostTemplate -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$HostName;$HtplName"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$_hostname;$HtplName"
+        }
     }
 }

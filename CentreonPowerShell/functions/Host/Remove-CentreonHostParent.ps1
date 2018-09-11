@@ -25,13 +25,15 @@ function Remove-CentreonHostParent {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string[]] $ParentName
     )
     $ParentName = $ParentName -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action DELPARENT -Value "$HostName;$ParentName"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action DELPARENT -Value "$_hostname;$ParentName"
+        }
     }
 }

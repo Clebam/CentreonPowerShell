@@ -19,7 +19,9 @@ function Get-CentreonHostHtpl {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string] $HostName
+        [string[]] $HostName
     )
-    Invoke-Centreon -Object HOST -Action GETTEMPLATE -Value $HostName
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action GETTEMPLATE -Value $_hostname
+    }
 }

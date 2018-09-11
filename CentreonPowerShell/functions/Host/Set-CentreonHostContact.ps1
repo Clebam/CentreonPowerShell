@@ -25,13 +25,15 @@ function Set-CentreonHostContact {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string[]] $Contact
     )
     $Contact = $Contact -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$HostName;$Contact"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$_hostname;$Contact"
+        }
     }
 }

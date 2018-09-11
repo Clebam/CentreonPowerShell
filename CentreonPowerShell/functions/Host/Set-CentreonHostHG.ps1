@@ -25,13 +25,15 @@ function Set-CentreonHostHG {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string[]] $HostGroup
     )
     $HostGroup = $HostGroup -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$HostName;$HostGroup"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$HostGroup"
+        }
     }
 }

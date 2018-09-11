@@ -27,7 +27,7 @@ function Set-CentreonHostParameter {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateSet("2d_coords",
             "3d_coords",
@@ -79,6 +79,8 @@ function Set-CentreonHostParameter {
         $Value
     )
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETPARAM -Value "$Parameter;$Value"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_hostname,$Parameter;$Value"
+        }
     }
 }

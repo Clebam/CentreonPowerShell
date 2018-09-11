@@ -19,7 +19,9 @@ function Enable-CentreonHost {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string] $HostName
+        [string[]] $HostName
     )
-    Invoke-Centreon -Object HOST -Action ENABLE -Value $HostName
+    foreach ($_hostname in $HostName) {
+        Invoke-Centreon -Object HOST -Action ENABLE -Value $_hostname
+    }
 }

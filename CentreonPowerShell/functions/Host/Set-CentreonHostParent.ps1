@@ -25,13 +25,15 @@ function Set-CentreonHostParent {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string[]] $ParentName
     )
     $ParentName = $ParentName -join "|"
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETPARENT -Value "$HostName;$ParentName"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETPARENT -Value "$_hostname;$ParentName"
+        }
     }
 }

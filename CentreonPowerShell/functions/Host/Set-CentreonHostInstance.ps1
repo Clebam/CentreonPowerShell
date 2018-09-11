@@ -25,11 +25,13 @@ function Set-CentreonHostInstance {
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+        [string[]] $HostName,
         [Parameter(Mandatory)]
         [string] $PollerName
     )
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$HostName;$PollerName"
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
+        }
     }
 }
