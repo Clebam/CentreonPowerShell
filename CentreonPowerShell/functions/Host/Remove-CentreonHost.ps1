@@ -22,7 +22,8 @@ function Remove-CentreonHost {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName
+        [Alias("Name")]
+		[string] $HostName
     )
     if ($PSCmdlet.ShouldProcess($HostName)) {
         Invoke-Centreon -Object HOST -Action DEL -Value $HostName

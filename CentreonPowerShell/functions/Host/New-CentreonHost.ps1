@@ -46,7 +46,8 @@ function New-CentreonHost {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string] $Description,
         [ValidateNotNullOrEmpty()]

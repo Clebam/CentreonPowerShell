@@ -20,7 +20,8 @@ function Add-CentreonHostHtpl {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )

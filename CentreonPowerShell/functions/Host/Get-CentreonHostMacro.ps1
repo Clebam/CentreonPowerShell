@@ -18,7 +18,8 @@ function Get-CentreonHostMacro {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName
+        [Alias("Name")]
+		[string] $HostName
     )
     Invoke-Centreon -Object HOST -Action GETMACRO -Value $HostName
 }

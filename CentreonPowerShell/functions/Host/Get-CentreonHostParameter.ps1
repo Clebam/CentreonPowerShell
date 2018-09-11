@@ -26,7 +26,8 @@ function Get-CentreonHostParameter {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [Parameter(Mandatory, ParameterSetName = "Default")]
         [ValidateSet("2d_coords",
             "3d_coords",

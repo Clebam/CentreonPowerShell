@@ -34,7 +34,8 @@ function Set-CentreonHostMacro {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string] $MacroName,

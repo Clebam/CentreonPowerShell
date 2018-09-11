@@ -24,7 +24,8 @@ function Remove-CentreonHostCG {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [string[]] $ContactGroup

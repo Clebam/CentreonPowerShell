@@ -24,7 +24,8 @@ function Remove-CentreonHtpl {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )

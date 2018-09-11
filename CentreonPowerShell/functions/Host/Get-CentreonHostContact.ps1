@@ -18,7 +18,8 @@ function Get-CentreonHostContact {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName
+        [Alias("Name")]
+		[string] $HostName
     )
     Invoke-Centreon -Object HOST -Action GETCONTACT -Value $HostName
 }

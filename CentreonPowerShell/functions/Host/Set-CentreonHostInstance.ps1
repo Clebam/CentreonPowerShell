@@ -24,7 +24,8 @@ function Set-CentreonHostInstance {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string] $HostName,
+        [Alias("Name")]
+		[string] $HostName,
         [Parameter(Mandatory)]
         [string] $PollerName
     )
