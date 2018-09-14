@@ -31,7 +31,7 @@ function Add-CentreonHostCG {
         [string[]] $ContactGroup
     )
     begin {
-      $JoinedContactGroup = $ContactGroup -join "|"  
+      $JoinedContactGroup = $ContactGroup -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
@@ -41,6 +41,6 @@ function Add-CentreonHostCG {
         }
     }
     end {
-        
+
     }
 }

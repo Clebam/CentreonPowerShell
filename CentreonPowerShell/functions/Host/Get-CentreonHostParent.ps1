@@ -35,5 +35,5 @@ function Get-CentreonHostParent {
     }
     end {
 
-    }    
+    }
 }

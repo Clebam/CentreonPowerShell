@@ -31,5 +31,5 @@ function Initialize-CentreonHostHtpl {
     }
     end {
 
-    }    
+    }
 }

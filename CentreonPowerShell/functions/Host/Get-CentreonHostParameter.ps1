@@ -81,7 +81,7 @@ function Get-CentreonHostParameter {
     begin {
         if ($All) {
             [string[]]$Parameter = (Get-Variable "Parameter").Attributes.ValidValues
-        }  
+        }
     }
     process {
         $JoinedParameter = $Parameter -join "|"
@@ -90,10 +90,10 @@ function Get-CentreonHostParameter {
                 HostName  = $HostName -as [string]
                 Parameter = [pscustomobject]((Invoke-Centreon -Object HOST -Action GETPARAM -Value "$_hostname;$JoinedParameter" -NonCsvOutput) -replace ":", "=" | Sort-Object | ConvertFrom-StringData)
             }
-            $PSObject        
+            $PSObject
         }
     }
     end {
-        
+
     }
 }

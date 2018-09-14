@@ -3,7 +3,7 @@
         Creates a new hostgroup
     .DESCRIPTION
         Creates a new hostgroup
-    .PARAMETER Name
+    .PARAMETER HostGroupName
         Corresponds to the hostgroup name
     .PARAMETER Description
         Corresponds to the hostgroup description (Alias)
@@ -12,7 +12,7 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        New-CentreonHostGroup -Name "Mamoudzou_Servers" -Description "Servers located in Mamoudzou"
+        New-CentreonHostGroup -HostGroupName "Mamoudzou_Servers" -Description "Servers located in Mamoudzou"
 
         Creates a new hostgroup name "Mamoudzou_Servers" with its description
     .NOTES

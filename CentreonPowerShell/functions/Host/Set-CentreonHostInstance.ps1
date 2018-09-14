@@ -29,11 +29,7 @@ function Set-CentreonHostInstance {
         [Parameter(Mandatory)]
         [string] $PollerName
     )
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
-        }
-    }
+    
     begin {
 
     }
