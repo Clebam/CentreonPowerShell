@@ -30,10 +30,23 @@ function Set-CentreonHostHG {
         [ValidateNotNullOrEmpty()]
         [string[]] $HostGroup
     )
-    $HostGroup = $HostGroup -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$HostGroup"
+
+    begin {
+        $HostGroup = $HostGroup -join "|"
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$HostGroup"
+            }
         }
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$_hostname;$Contact"
+            }
+        }
+    }
+    end {
+
     }
 }

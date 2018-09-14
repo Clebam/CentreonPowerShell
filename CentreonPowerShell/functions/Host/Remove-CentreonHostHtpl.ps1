@@ -29,10 +29,17 @@ function Remove-CentreonHtpl {
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
-    $HostTemplate = $HostTemplate -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$_hostname;$HostTemplate"
+    begin {
+        $HostTemplate = $HostTemplate -join "|"
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$_hostname;$HostTemplate"
+            }
         }
+    }
+    end {
+
     }
 }

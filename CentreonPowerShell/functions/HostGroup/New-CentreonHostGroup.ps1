@@ -24,12 +24,11 @@ function New-CentreonHostGroup {
     param (
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
-        [string] $Name,
+        [string] $HostGroupName,
         [ValidateNotNullOrEmpty()]
         [string] $Description
     )
-    $Value = "$Description;$Name"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HG -Action ADD -Value $Value
+    if ($PSCmdlet.ShouldProcess($HostGroupName)) {
+        Invoke-Centreon -Object HG -Action ADD -Value "$Description;$HostGroupName"
     }
 }

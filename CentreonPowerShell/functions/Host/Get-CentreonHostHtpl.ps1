@@ -21,7 +21,19 @@ function Get-CentreonHostHtpl {
         [Alias("Name")]
         [string[]] $HostName
     )
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action GETTEMPLATE -Value $_hostname
+    begin {
+
+    }
+    process {
+        foreach ($_hostname in $HostName) {
+            $PSObject = [PSCustomObject]@{
+                HostName = $HostName -as [string]
+                HostTemplate  = Invoke-Centreon -Object HOST -Action GETTEMPLATE -Value $_hostname | Select-Object -ExpandProperty name
+            }
+            $PSObject
+        }
+    }
+    end {
+
     }
 }

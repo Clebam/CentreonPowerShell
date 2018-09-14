@@ -21,7 +21,15 @@ function Initialize-CentreonHostHtpl {
         [Alias("Name")]
         [string[]] $HostName
     )
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action APPLYTPL -Value $_hostname
+    begin {
+
     }
+    process {
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action APPLYTPL -Value $_hostname
+        }
+    }
+    end {
+
+    }    
 }

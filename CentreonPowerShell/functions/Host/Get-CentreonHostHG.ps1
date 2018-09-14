@@ -21,7 +21,19 @@ function Get-CentreonHostHG {
         [Alias("Name")]
         [string[]] $HostName
     )
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action GETHOSTGROUP -Value $_hostname
+    begin {
+
+    }
+    process {
+        foreach ($_hostname in $HostName) {
+            $PSObject = [PSCustomObject]@{
+                HostName = $HostName -as [string]
+                HostGroupName  = Invoke-Centreon -Object HOST -Action GETHOSTGROUP -Value $_hostname | Select-Object -ExpandProperty name
+            }
+            $PSObject
+        }
+    }
+    end {
+
     }
 }

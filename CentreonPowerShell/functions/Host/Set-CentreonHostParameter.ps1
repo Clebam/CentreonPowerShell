@@ -83,4 +83,17 @@ function Set-CentreonHostParameter {
             Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_hostname,$Parameter;$Value"
         }
     }
+    begin {
+
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_hostname,$Parameter;$Value"
+            }
+        }
+    }
+    end {
+
+    }
 }

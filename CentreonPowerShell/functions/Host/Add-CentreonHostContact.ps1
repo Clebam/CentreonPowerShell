@@ -30,10 +30,17 @@ function Add-CentreonHostContact {
         [ValidateNotNullOrEmpty()]
         [string[]] $Contact
     )
-    $Contact = $Contact -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action ADDCONTACT -Value "$_hostname;$Contact"
-        }       
+    begin {
+        $JoinedContact = $Contact -join "|"
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action ADDCONTACT -Value "$_hostname;$JoinedContact"
+            }       
+        } 
+    }
+    end {
+
     }
 }

@@ -21,7 +21,19 @@ function Get-CentreonHostParent {
         [Alias("Name")]
         [string[]] $HostName
     )
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action GETPARENT -Value $_hostname
+    begin {
+
     }
+    process {
+        foreach ($_hostname in $HostName) {
+            $PSObject = [PSCustomObject]@{
+                HostName  = $HostName -as [string]
+                $ParentName = Invoke-Centreon -Object HOST -Action GETPARENT -Value $_hostname | Select-Object -ExpandProperty "name"
+            }
+            $PSObject
+        }
+    }
+    end {
+
+    }    
 }

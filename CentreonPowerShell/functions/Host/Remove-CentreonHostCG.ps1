@@ -30,10 +30,17 @@ function Remove-CentreonHostCG {
         [ValidateNotNullOrEmpty()]
         [string[]] $ContactGroup
     )
-    $ContactGroup = $ContactGroup -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action DELCONTACTGROUP -Value "$_hostname;$ContactGroup"
+    begin {
+        $ContactGroup = $ContactGroup -join "|"
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action DELCONTACTGROUP -Value "$_hostname;$ContactGroup"
+            }
         }
+    }
+    end {
+
     }
 }

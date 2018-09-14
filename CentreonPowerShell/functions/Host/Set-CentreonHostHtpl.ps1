@@ -29,10 +29,18 @@ function Set-CentreonHostHtpl {
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
-    $HostTemplate = $HostTemplate -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$_hostname;$HtplName"
+
+    begin {
+        $HostTemplate = $HostTemplate -join "|"
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$_hostname;$HtplName"
+            }
         }
+    }
+    end {
+
     }
 }

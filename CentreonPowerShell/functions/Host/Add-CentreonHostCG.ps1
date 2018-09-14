@@ -30,10 +30,17 @@ function Add-CentreonHostCG {
         [ValidateNotNullOrEmpty()]
         [string[]] $ContactGroup
     )
-    $ContactGroup = $ContactGroup -join "|"
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action ADDCONTACTGROUP -Value "$_hostname;$ContactGroup"
+    begin {
+      $JoinedContactGroup = $ContactGroup -join "|"  
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action ADDCONTACTGROUP -Value "$_hostname;$JoinedContactGroup"
+            }
         }
+    }
+    end {
+        
     }
 }

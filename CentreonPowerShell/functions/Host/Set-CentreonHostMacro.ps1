@@ -43,15 +43,27 @@ function Set-CentreonHostMacro {
         [switch] $IsPassword,
         [string] $MacroDescription
     )
-    if ($IsPassword) {
-        $IsPasswordValue = 1
-    }
-    else {
-        $IsPasswordValue = 0
-    }
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action SETMACRO -Value "$_hostname;$MacroName;$MacroValue;$IsPasswordValue;$MacroDescription"
+    begin {
+        if ($IsPassword) {
+            $IsPasswordValue = 1
         }
+        else {
+            $IsPasswordValue = 0
+        }
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETMACRO -Value "$_hostname;$MacroName;$MacroValue;$IsPasswordValue;$MacroDescription"
+            }
+        }
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
+            }
+        }
+    }
+    end {
+
     }
 }

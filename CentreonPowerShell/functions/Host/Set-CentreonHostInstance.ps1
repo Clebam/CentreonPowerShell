@@ -34,4 +34,17 @@ function Set-CentreonHostInstance {
             Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
         }
     }
+    begin {
+
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
+            }
+        }
+    }
+    end {
+
+    }
 }

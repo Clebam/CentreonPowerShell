@@ -25,9 +25,17 @@ function Clear-CentreonHostSeverity {
         [Alias("Name")]
         [string[]] $HostName
     )
-    if ($PSCmdlet.ShouldProcess($HostName)) {
-        foreach ($_hostname in $HostName) {
-            Invoke-Centreon -Object HOST -Action UNSETSEVERITY -Value "$_hostname"
+    begin {
+
+    }
+    process {
+        if ($PSCmdlet.ShouldProcess($HostName)) {
+            foreach ($_hostname in $HostName) {
+                Invoke-Centreon -Object HOST -Action UNSETSEVERITY -Value "$_hostname"
+            }
         }
+    }
+    end {
+
     }
 }

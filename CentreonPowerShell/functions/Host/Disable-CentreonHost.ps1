@@ -21,7 +21,15 @@ function Disable-CentreonHost {
         [Alias("Name")]
         [string[]] $HostName
     )
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action DISABLE -Value $_hostname
+    begin {
+
+    }
+    process {
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action DISABLE -Value $_hostname
+        }
+    }
+    end {
+
     }
 }

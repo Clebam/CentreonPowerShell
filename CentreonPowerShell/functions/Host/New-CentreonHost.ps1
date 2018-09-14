@@ -44,10 +44,10 @@
 function New-CentreonHost {
     [CmdletBinding(SupportsShouldProcess)]
     param (
-        [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
+        [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string[]] $HostName,
+		[string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string] $Description,
         [ValidateNotNullOrEmpty()]

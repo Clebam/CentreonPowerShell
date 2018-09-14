@@ -25,8 +25,15 @@ function Add-CentreonHostHtpl {
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate
     )
-    $HostTemplate = $HostTemplate -join "|"
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action ADDTEMPLATE -Value "$_hostname;$HostTemplate"
+    begin {
+        $JoinedHostTemplate = $HostTemplate -join "|"
+    }
+    process {
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action ADDTEMPLATE -Value "$_hostname;$JoinedHostTemplate"
+        }
+    }
+    end {
+
     }
 }

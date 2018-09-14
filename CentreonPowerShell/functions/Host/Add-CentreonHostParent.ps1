@@ -25,8 +25,15 @@ function Add-CentreonHostParent {
         [ValidateNotNullOrEmpty()]
         [string[]] $ParentName
     )
-    $ParentName = $ParentName -join "|"
-    foreach ($_hostname in $HostName) {
-        Invoke-Centreon -Object HOST -Action ADDPARENT -Value "$_hostname;$ParentName"
+    begin {
+        $JoinedParentName = $ParentName -join "|"
+    }
+    process {
+        foreach ($_hostname in $HostName) {
+            Invoke-Centreon -Object HOST -Action ADDPARENT -Value "$_hostname;$JoinedParentName"
+        }
+    }
+    end {
+
     }
 }
