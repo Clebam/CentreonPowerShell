@@ -1,8 +1,8 @@
 ﻿<#
     .SYNOPSIS
-        Adds a template to a host (APPEND). If you want to replace, use Set-CentreonHostTemplate
+        Adds a template to a host (APPEND). If you want to replace, use Set-CentreonHostHtpl
     .DESCRIPTION
-        Adds a template to a host (APPEND). If you want to replace, use Set-CentreonHostTemplate
+        Adds a template to a host (APPEND). If you want to replace, use Set-CentreonHostHtpl
     .PARAMETER HostName
         Name of the host
     .PARAMETER HostTemplate
