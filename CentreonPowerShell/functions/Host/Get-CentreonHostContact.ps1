@@ -27,7 +27,7 @@ function Get-CentreonHostContact {
     process {
         foreach ($_hostname in $HostName) {
             $PSObject = [PSCustomObject]@{
-                HostName = $HostName -as [string]
+                HostName = $_hostname -as [string]
                 Contact  = Invoke-Centreon -Object HOST -Action GETCONTACT -Value $_hostname | Select-Object -Expand Name
             }
             $PSObject

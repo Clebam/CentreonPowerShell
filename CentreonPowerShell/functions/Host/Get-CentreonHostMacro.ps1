@@ -27,7 +27,7 @@ function Get-CentreonHostMacro {
     process {
         foreach ($_hostname in $HostName) {
             $PSObject = [PSCustomObject]@{
-                HostName  = $HostName -as [string]
+                HostName  = $_hostname -as [string]
                 MacroName = Invoke-Centreon -Object HOST -Action GETMACRO -Value $_hostname | Select-Object -ExpandProperty "macro name"
             }
             $PSObject
