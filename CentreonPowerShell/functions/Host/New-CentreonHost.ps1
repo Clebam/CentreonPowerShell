@@ -47,7 +47,7 @@ function New-CentreonHost {
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
         [Alias("Name")]
-		[string] $HostName,
+        [string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string] $Description,
         [ValidateNotNullOrEmpty()]
@@ -61,14 +61,14 @@ function New-CentreonHost {
         [string[]] $HostGroup,
         [switch]$ApplyTemplate
     )
-    if ($HostTemplate) {$HostTemplate = $HostTemplate -join "|"}
-    if ($HostGroup) {$HostGroup = $HostGroup -join "|"}
+    if ($HostTemplate) {$JoinedHostTemplate = $HostTemplate -join "|"}
+    if ($HostGroup) {$JoinedHostGroup = $HostGroup -join "|"}
 
     if ($PSCmdlet.ShouldProcess($HostName)) {
-        Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$HostTemplate;$PollerName;$HostGroup"
+        Invoke-Centreon -Object HOST -Action ADD -Value "$HostName;$Description;$HostAddress;$JoinedHostTemplate;$PollerName;$JoinedHostGroup"
 
         if ($ApplyTemplate) {
-            Invoke-Centreon -Object HOST -Action APPLYTPL -Value $HostName
+            Initialize-CentreonHostHtpl -HostName $HostName
         }
     }
 }
