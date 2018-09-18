@@ -9,7 +9,7 @@
         Corresponds to the description of the host template (Alias)
     .PARAMETER HostAddress
         Corresponds to the DNS Name or IP Address on the host template
-    .PARAMETER HostTemplate
+    .PARAMETER ParentHostTemplate
         Name of the parent host template
     .PARAMETER PollerName
         Corresponds to the name of the poller
