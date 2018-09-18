@@ -54,13 +54,12 @@ function New-CentreonHostTemplate {
         [ValidateNotNullOrEmpty()]
         [string] $PollerName,
         [ValidateNotNullOrEmpty()]
-        [string[]] $HostGroup,
-        [switch]$ApplyTemplate
+        [string[]] $HostGroup
     )
-    if ($ParentHostTemplate) {$ParentHostTemplate = $ParentHostTemplate -join "|"}
-    if ($HostGroup) {$HostGroup = $HostGroup -join "|"}
+    if ($ParentHostTemplate) {$JoinedParentHostTemplate = $ParentHostTemplate -join "|"}
+    if ($HostGroup) {$JoinedHostGroup = $HostGroup -join "|"}
 
     if ($PSCmdlet.ShouldProcess($HostTemplate)) {
-        Invoke-Centreon -Object HTPL -Action ADD -Value "$HostTemplate;$Description;$HostAddress;$ParentHostTemplate;$PollerName;$HostGroup"
+        Invoke-Centreon -Object HTPL -Action ADD -Value "$HostTemplate;$Description;$HostAddress;$JoinedParentHostTemplate;$PollerName;$JoinedHostGroup"
     }
 }
