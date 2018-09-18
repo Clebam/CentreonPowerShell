@@ -41,7 +41,7 @@ function Set-CentreonHostParameter {
             "check_interval",
             "check_freshness",
             "check_period",
-            "checks_enabled",
+            #"checks_enabled",
             "contact_additive_inheritance",
             "cg_additive_inheritance",
             "event_handler",
@@ -54,7 +54,7 @@ function Set-CentreonHostParameter {
             "icon_image_alt",
             "max_check_attempts",
             "name",
-            "normal_check_interval",
+            #"normal_check_interval",
             "notes",
             "notes_url",
             "notifications_enabled",
@@ -71,7 +71,7 @@ function Set-CentreonHostParameter {
             "snmp_version",
             "stalking_options",
             "statusmap_image",
-            "vrml_image",
+            #"vrml_image",
             "host_notification_options"
         )]
         [string] $Parameter,
