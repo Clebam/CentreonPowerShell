@@ -22,7 +22,7 @@ Switch01
 
 PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 ```
-# Work In Progress - Translating 359 Commands ![Progress](http://progressed.io/bar/38?scale=359&title=Translated&suffix=+)
+# Work In Progress - Translating 355 Commands ![Progress](http://progressed.io/bar/63?scale=359&title=Translated&suffix=+)
 - Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html), [Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html), [Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html), [Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Translating)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Controlling)
@@ -80,7 +80,7 @@ PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Controlling)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Testing)
 - HostTemplate - Includes : [Host templates](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_templates.html)
-	- [ ] ![Progress](http://progressed.io/bar/3?title=Translating)
+	- [x] ![Progress](http://progressed.io/bar/100?title=Translating)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Controlling)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Testing)
 - Instance - Includes : [Instances (Pollers)](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/instances.html)
