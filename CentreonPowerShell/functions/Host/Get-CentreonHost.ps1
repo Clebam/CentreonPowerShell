@@ -22,18 +22,10 @@ function Get-CentreonHost {
     param (
         [string] $Filter
     )
-    begin {
-
+    if ($Filter) {
+        Invoke-Centreon -Object HOST -Action SHOW -Value $Filter | Select-Object @{Name = "HostName"; Expression = {$_.Name}}, * -ExcludeProperty Name
     }
-    process {
-        if ($Filter) {
-            Invoke-Centreon -Object HOST -Action SHOW -Value $Filter
-        }
-        else {
-            Invoke-Centreon -Object HOST -Action SHOW
-        }
-    }
-    end {
-
+    else {
+        Invoke-Centreon -Object HOST -Action SHOW | Select-Object @{Name = "HostName"; Expression = {$_.Name}}, * -ExcludeProperty Name
     }
 }
