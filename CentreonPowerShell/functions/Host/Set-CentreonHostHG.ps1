@@ -40,11 +40,6 @@ function Set-CentreonHostHG {
                 Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$HostGroup"
             }
         }
-        if ($PSCmdlet.ShouldProcess($HostName)) {
-            foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$_hostname;$Contact"
-            }
-        }
     }
     end {
 
