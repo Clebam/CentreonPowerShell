@@ -31,12 +31,12 @@ function Remove-CentreonHostCG {
         [string[]] $ContactGroup
     )
     begin {
-        $ContactGroup = $ContactGroup -join "|"
+        $JoinedContactGroup = $ContactGroup -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action DELCONTACTGROUP -Value "$_hostname;$ContactGroup"
+                Invoke-Centreon -Object HOST -Action DELCONTACTGROUP -Value "$_hostname;$JoinedContactGroup"
             }
         }
     }

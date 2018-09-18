@@ -32,12 +32,12 @@ function Set-CentreonHostParent {
     )
 
     begin {
-        $ParentName = $ParentName -join "|"
+        $JoinedParentName = $ParentName -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETPARENT -Value "$_hostname;$ParentName"
+                Invoke-Centreon -Object HOST -Action SETPARENT -Value "$_hostname;$JoinedParentName"
             }
         }
     }

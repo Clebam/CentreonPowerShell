@@ -31,12 +31,12 @@ function Set-CentreonHostHtpl {
     )
 
     begin {
-        $HostTemplate = $HostTemplate -join "|"
+        $JoinedHostTemplate = $HostTemplate -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$_hostname;$HtplName"
+                Invoke-Centreon -Object HOST -Action SETTEMPLATE -Value "$_hostname;$JoinedHostTemplate"
             }
         }
     }

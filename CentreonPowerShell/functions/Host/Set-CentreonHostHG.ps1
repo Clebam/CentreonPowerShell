@@ -32,12 +32,12 @@ function Set-CentreonHostHG {
     )
 
     begin {
-        $HostGroup = $HostGroup -join "|"
+        $JoinedHostGroup = $HostGroup -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$HostGroup"
+                Invoke-Centreon -Object HOST -Action SETHOSTGROUP -Value "$_hostname;$JoinedHostGroup"
             }
         }
     }

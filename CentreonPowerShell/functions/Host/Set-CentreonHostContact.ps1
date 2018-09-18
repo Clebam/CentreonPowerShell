@@ -32,12 +32,12 @@ function Set-CentreonHostContact {
     )
 
     begin {
-        $Contact = $Contact -join "|"
+        $JoinedContact = $Contact -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$_hostname;$Contact"
+                Invoke-Centreon -Object HOST -Action SETCONTACT -Value "$_hostname;$JoinedContact"
             }
         }
     }

@@ -31,12 +31,12 @@ function Add-CentreonHostContact {
         [string[]] $Contact
     )
     begin {
-        $Contact = $Contact -join "|"
+        $JoinedContact = $Contact -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action DELCONTACT -Value "$_hostname;$Contact"
+                Invoke-Centreon -Object HOST -Action DELCONTACT -Value "$_hostname;$JoinedContact"
             }
         }
     }

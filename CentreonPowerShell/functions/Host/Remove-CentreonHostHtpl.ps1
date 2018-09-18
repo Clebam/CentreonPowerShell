@@ -30,12 +30,12 @@ function Remove-CentreonHostHtpl {
         [string[]] $HostTemplate
     )
     begin {
-        $HostTemplate = $HostTemplate -join "|"
+        $JoinedHostTemplate = $HostTemplate -join "|"
     }
     process {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$_hostname;$HostTemplate"
+                Invoke-Centreon -Object HOST -Action DELTEMPLATE -Value "$_hostname;$JoinedHostTemplate"
             }
         }
     }
