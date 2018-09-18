@@ -12,7 +12,7 @@
     .PARAMETER IsPassword
         Define if the value should be considered as password and hidden
     .PARAMETER MacroDescription
-        Name of the host
+        Description of the Macro
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
@@ -55,11 +55,6 @@ function Set-CentreonHostMacro {
         if ($PSCmdlet.ShouldProcess($HostName)) {
             foreach ($_hostname in $HostName) {
                 Invoke-Centreon -Object HOST -Action SETMACRO -Value "$_hostname;$MacroName;$MacroValue;$IsPasswordValue;$MacroDescription"
-            }
-        }
-        if ($PSCmdlet.ShouldProcess($HostName)) {
-            foreach ($_hostname in $HostName) {
-                Invoke-Centreon -Object HOST -Action SETINSTANCE -Value "$_hostname;$PollerName"
             }
         }
     }
