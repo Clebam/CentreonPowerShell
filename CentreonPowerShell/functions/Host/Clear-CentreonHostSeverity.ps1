@@ -22,7 +22,6 @@ function Clear-CentreonHostSeverity {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostName
     )
     begin {

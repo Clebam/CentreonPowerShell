@@ -24,7 +24,6 @@ function Add-CentreonHostContact {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostName,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]

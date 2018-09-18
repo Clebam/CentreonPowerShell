@@ -24,7 +24,6 @@ function Add-CentreonHostTemplateHG {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostTemplate,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]

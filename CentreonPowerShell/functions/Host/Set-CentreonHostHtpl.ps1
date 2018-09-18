@@ -24,7 +24,6 @@ function Set-CentreonHostHtpl {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $HostTemplate

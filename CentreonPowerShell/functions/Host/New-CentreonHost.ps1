@@ -46,7 +46,6 @@ function New-CentreonHost {
     param (
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string] $HostName,
         [ValidateNotNullOrEmpty()]
         [string] $Description,

@@ -20,7 +20,6 @@ function Add-CentreonHostParent {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostName,
         [ValidateNotNullOrEmpty()]
         [string[]] $ParentName

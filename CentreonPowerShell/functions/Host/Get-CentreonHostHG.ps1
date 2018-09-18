@@ -18,7 +18,6 @@ function Get-CentreonHostHG {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [Alias("Name")]
         [string[]] $HostName
     )
     begin {
