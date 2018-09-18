@@ -12,14 +12,14 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonHtpl -HostName "WebMdz01" -HostTemplate "OS-Linux-SNMP-Custom", "OS-Linux-SNMP"
+        Remove-CentreonHostHtpl -HostName "WebMdz01" -HostTemplate "OS-Linux-SNMP-Custom", "OS-Linux-SNMP"
 
         Removes the templates OS-Linux-SNMP-Custom and OS-Linux-SNMP from the host WebMdz01
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHtpl {
+function Remove-CentreonHostHtpl {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
