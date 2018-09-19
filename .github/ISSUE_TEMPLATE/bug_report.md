@@ -6,6 +6,7 @@ about: Create a report to help us improve
 
 **Environment**
 pwsh version :
+
 centreon\clapi version :
 
 **Describe the bug**
