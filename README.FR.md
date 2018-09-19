@@ -8,21 +8,51 @@ La sortie récente de PowerShell Core 6.0 sur les systèmes Linux permet désorm
 
 _Read this in other languages :_ [English](https://github.com/Clebam/CentreonPowerShell/blob/Development/README.md), [Français](https://github.com/Clebam/CentreonPowerShell/blob/Development/README.FR.md)
 
-__Exemple__
+__Exemples__
+```PowerShell
+PS /root> Import-Module CentreonPowerShell
+
+PS /root> Set-CentreonCredential
+
+cmdlet Set-CentreonCredential at command pipeline position 1
+Supply values for the following parameters:
+Credential
+User: admin
+Password for user admin: ********
+
+PS /root> Get-CentreonHost
+
+
+HostName : WebMdz01
+id       : 23
+alias    : Mamoudzou WebServer
+address  : 192.168.1.24
+activate : 1
+
+HostName : WebCoco01
+id       : 24
+alias    : Coconi WebServer
+address  : 192.168.1.25
+activate : 1
 ```
-PS /root> Get-CentreonHost | Select-Object name
 
-name
-----
-CentreonCentral
-Server001
-Server002
-Switch01
+```PowerShell
+PS /root> Get-CentreonHost WebMdz01 | Get-CentreonHostHG
+
+HostName HostGroup
+-------- ---------
+WebMdz01 WebServerGroup
 
 
-PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
+PS /root> Get-CentreonHost WebMdz01 | Get-CentreonHostHG | Get-CentreonHostGroupMember
+
+HostGroup      HostName
+---------      --------
+WebServerGroup {WebMdz01, WebCoco01}
+
 ```
-# Work In Progress - Traduction des 355 Commandes ![Progress](http://progressed.io/bar/63?scale=359&title=Translated&suffix=+)
+
+# Work In Progress - Traduction des 355 Commandes ![Progress](http://progressed.io/bar/70?scale=359&title=Translated&suffix=+)
 - Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html), [Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html), [Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html), [Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Traduction)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Contrôle)
@@ -76,8 +106,9 @@ PS /root> Get-CentreonHost | Where-Object activate -eq 0 | Enable-CentreonHost
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Contrôle)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Tests)
 - HostGroup - Includes : [Host groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_groups.html)
-	- [ ] ![Progress](http://progressed.io/bar/0?title=Traduction)
+	- [x] ![Progress](http://progressed.io/bar/100?title=Traduction)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Contrôle)
+	- [ ] ![Progress](http://progressed.io/bar/0?title=Tests)
 - HostTemplate - Includes : [Host templates](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_templates.html)
 	- [x] ![Progress](http://progressed.io/bar/100?title=Traduction)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Contrôle)
