@@ -177,8 +177,10 @@ WebServerGroup {WebMdz01, WebCoco01}
 # To do
 
 - Transcrire les commandes de CLAPI en fonctions PowerShell
-- Concevoir un meilleur output des fonctions afin de pouvoir utiliser le pipeline
-- ...
+- Renforcer le design des output pour le pipelining
+- Créer des fonctions utiles comme `Get-CentreonHost -Full` qui retournerait toutes les infos liés à un hôte
+- Revoir les aides des fonctions maintenir une certaine cohérence
+- Tester, tester et... tester encore!
 
 # Release
 

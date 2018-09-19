@@ -177,8 +177,10 @@ WebServerGroup {WebMdz01, WebCoco01}
 # To do
 
 - Translate the command from CLAPI into PowerShell functions
-- Design a better output so it can be pipelined
-- ...
+- Stengthen pipelining design
+- Create useful function like `Get-CentreonHost -full` that would return all the info linked to the Host
+- Review Comment Based Help to make them consistent
+- Test, test, test again...
 
 # Release
 
