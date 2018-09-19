@@ -19,7 +19,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonHostSeverity {
+function Set-CentreonHostCategorySeverity {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

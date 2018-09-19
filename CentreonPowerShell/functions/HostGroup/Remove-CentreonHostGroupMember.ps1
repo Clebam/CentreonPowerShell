@@ -16,7 +16,7 @@
         Version: 1.0
 #>
 function Remove-CentreonHostGroupMember {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -29,8 +29,10 @@ function Remove-CentreonHostGroupMember {
         $JoinedMember = $Member -join "|"
     }
     process {
-        foreach ($_hostgroup in $HostGroup) {
-            Invoke-Centreon -Object HG -Action DELMEMBER -Value "$_hostgroup;$JoinedMember"
+        if ($PSCmdlet.ShouldProcess($HostGroup)) {
+            foreach ($_hostgroup in $HostGroup) {
+                Invoke-Centreon -Object HG -Action DELMEMBER -Value "$_hostgroup;$JoinedMember"
+            }
         }
     }
     end {

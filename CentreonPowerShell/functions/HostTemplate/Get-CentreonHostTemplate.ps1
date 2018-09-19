@@ -23,10 +23,10 @@ function Get-CentreonHostTemplate {
         [string] $Filter
     )
 
-    if ($Filter) {        
+    if ($Filter) {
         Invoke-Centreon -Object HTPL -Action SHOW -Value $Filter | Select-Object @{Name="HostTemplate";Expression={$_.Name}},* -ExcludeProperty Name
     }
-    else {      
+    else {
         Invoke-Centreon -Object HTPL -Action SHOW | Select-Object @{Name="HostTemplate";Expression={$_.Name}},* -ExcludeProperty Name
     }
 }

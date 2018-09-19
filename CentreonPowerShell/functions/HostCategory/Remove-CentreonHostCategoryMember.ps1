@@ -16,7 +16,7 @@
         Version: 1.0
 #>
 function Remove-CentreonHostCategoryMember {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -29,8 +29,10 @@ function Remove-CentreonHostCategoryMember {
         $JoinedMember = $Member -join "|"
     }
     process {
-        foreach ($_hostcategory in $HostCategory) {
-            Invoke-Centreon -Object HC -Action DELMEMBER -Value "$_hostcategory;$JoinedMember"
+        if ($PSCmdlet.ShouldProcess($HostCategory)) {
+            foreach ($_hostcategory in $HostCategory) {
+                Invoke-Centreon -Object HC -Action DELMEMBER -Value "$_hostcategory;$JoinedMember"
+            }
         }
     }
     end {

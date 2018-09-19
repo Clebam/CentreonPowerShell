@@ -16,7 +16,7 @@
         Version: 1.0
 #>
 function Set-CentreonHostCategoryMember {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -29,8 +29,10 @@ function Set-CentreonHostCategoryMember {
         $JoinedMember = $Member -join "|"
     }
     process {
-        foreach ($_hostcategory in $HostCategory) {
-            Invoke-Centreon -Object HC -Action SETMEMBER -Value "$_hostcategory;$JoinedMember"
+        if ($PSCmdlet.ShouldProcess($HostCategory)) {
+            foreach ($_hostcategory in $HostCategory) {
+                Invoke-Centreon -Object HC -Action SETMEMBER -Value "$_hostcategory;$JoinedMember"
+            }
         }
     }
     end {

@@ -16,7 +16,7 @@
         Version: 1.0
 #>
 function Set-CentreonHostGroupMember {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -29,8 +29,10 @@ function Set-CentreonHostGroupMember {
         $JoinedMember = $Member -join "|"
     }
     process {
-        foreach ($_hostgroup in $HostGroup) {
-            Invoke-Centreon -Object HG -Action SETMEMBER -Value "$_hostgroup;$JoinedMember"
+        if ($PSCmdlet.ShouldProcess($HostGroup)) {
+            foreach ($_hostgroup in $HostGroup) {
+                Invoke-Centreon -Object HG -Action SETMEMBER -Value "$_hostgroup;$JoinedMember"
+            }
         }
     }
     end {

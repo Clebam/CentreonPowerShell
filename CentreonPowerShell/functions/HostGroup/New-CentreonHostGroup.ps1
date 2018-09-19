@@ -3,8 +3,8 @@
         Creates a new hostgroup
     .DESCRIPTION
         Creates a new hostgroup
-    .PARAMETER HostGroupName
-        Corresponds to the hostgroup name
+    .PARAMETER HostGroup
+        Corresponds to the name of the hostgroup
     .PARAMETER Description
         Corresponds to the hostgroup description (Alias)
     .PARAMETER Confirm
