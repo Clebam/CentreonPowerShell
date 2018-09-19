@@ -52,7 +52,7 @@ WebServerGroup {WebMdz01, WebCoco01}
 
 ```
 
-# Work In Progress - Translating 355 Commands ![Progress](http://progressed.io/bar/70?scale=359&title=Translated&suffix=+)
+# Work In Progress - Translating 355 Commands ![Progress](http://progressed.io/bar/79?scale=359&title=Translated&suffix=+)
 - Acl - Includes : [ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl.html), [Action ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_action.html), [Menu ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_menu.html), [Resource ACL](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/acl_resource.html)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Translating)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Controlling)
@@ -102,7 +102,7 @@ WebServerGroup {WebMdz01, WebCoco01}
 	- [ ] ![Progress](http://progressed.io/bar/60?title=Controlling)
 	- [ ] ![Progress](http://progressed.io/bar/30?title=Testing)
 - HostCategory - Includes : [Host categories](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_categories.html)
-	- [ ] ![Progress](http://progressed.io/bar/0?title=Translating)
+	- [x] ![Progress](http://progressed.io/bar/100?title=Translating)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Controlling)
 	- [ ] ![Progress](http://progressed.io/bar/0?title=Testing)
 - HostGroup - Includes : [Host groups](https://documentation.centreon.com/docs/centreon-clapi/en/latest/objects/host_groups.html)
