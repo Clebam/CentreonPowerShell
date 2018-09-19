@@ -7,6 +7,10 @@
         Name of the hostgroup
     .PARAMETER Member
         Name of the member (HostName)
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Remove-CentreonHostGroupMember -Hostgroup WebServers -Member WebMdz01, WebCoco01
 

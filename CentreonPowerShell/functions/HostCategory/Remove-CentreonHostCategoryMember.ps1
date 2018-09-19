@@ -7,6 +7,10 @@
         Name of the host category
     .PARAMETER Member
         Name of the member (HostName and HostTemplate)
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Remove-CentreonHostCategoryMember -HostCategory WebServer_Critical -Member WebMdz01, OS-Linux-SNMP
 
