@@ -30,7 +30,7 @@ function Clear-CentreonHostCategorySeverity {
     process {
         if ($PSCmdlet.ShouldProcess($HostCategory)) {
             foreach ($_hostcategory in $HostCategory) {
-                Invoke-Centreon -Object HOST -Action UNSETSEVERITY -Value "$_hostcategory"
+                Invoke-Centreon -Object HC -Action UNSETSEVERITY -Value "$_hostcategory"
             }
         }
     }

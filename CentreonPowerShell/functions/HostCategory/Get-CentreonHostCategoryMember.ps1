@@ -27,7 +27,7 @@ function Get-CentreonHostCategoryMember {
         foreach ($_hostcategory in $HostCategory) {
             $PSObject = [PSCustomObject]@{
                 HostCategory = $_hostgroup -as [string]
-                Member       = Invoke-Centreon -Object HG -Action GETMEMBER -Value $_hostcategory | Select-Object -ExpandProperty "name"
+                Member       = Invoke-Centreon -Object HC -Action GETMEMBER -Value $_hostcategory | Select-Object -ExpandProperty "name"
             }
             $PSObject
         }
