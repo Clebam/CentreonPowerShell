@@ -14,7 +14,7 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Set-CentreonHostParameter -HostName "WebMdz01" -Param alias -Value "WebServer located in Mamoudzou"
+        Set-CentreonHostParameter -HostName "WebMdz01" -Parameter alias -Value "WebServer located in Mamoudzou"
 
         Set the parameter alias with a new value on host WebMdz01
     .NOTES
