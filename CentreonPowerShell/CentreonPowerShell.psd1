@@ -57,6 +57,7 @@
 	'Disable-CentreonHostTemplate',
 	'Enable-CentreonHost',
 	'Enable-CentreonHostTemplate',
+	'Get-CentreonApiToken',
 	'Get-CentreonBinary',
 	'Get-CentreonCommand',
 	'Get-CentreonCredential',
@@ -79,10 +80,15 @@
 	'Get-CentreonHostTemplateHtpl',
 	'Get-CentreonHostTemplateMacro',
 	'Get-CentreonHostTemplateParameter',
+	'Get-CentreonQueryType',
 	'Get-CentreonServiceTemplate',
+	'Get-CentreonWebServer',
 	'Initialize-CentreonHostHtpl',
 	'Invoke-Centreon',
+	'Invoke-CentreonCommand',
+	'New-CentreonApiToken',
 	'New-CentreonCommand',
+	'New-CentreonConnection',
 	'New-CentreonHost',
 	'New-CentreonHostCategory',
 	'New-CentreonHostGroup',
@@ -128,7 +134,9 @@
 	'Set-CentreonHostTemplateInstance',
 	'Set-CentreonHostTemplateMacro',
 	'Set-CentreonHostTemplateParameter',
-	'Set-CentreonHostTemplateSeverity')
+	'Set-CentreonHostTemplateSeverity',
+	'Set-CentreonQueryType',
+	'Set-CentreonWebServer')
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = ''
