@@ -68,3 +68,7 @@ Voir les milestones : [MileStones](https://github.com/Clebam/CentreonPowerShell/
 # Release
 
 Le module ne fonctionne pas encore.
+
+# Remerciements
+- Friedrich Weinmann (aka Fred) pour son framework PSModuleDevelopment - Visitez son [repository](https://github.com/PowershellFrameworkCollective/PSModuleDevelopment)
+- Florian Clisson pour son module CentreonPS - Visitez son [repository](https://github.com/ClissonFlorian/Centreon-Powershell-Module)
