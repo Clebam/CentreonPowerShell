@@ -46,7 +46,7 @@ function Set-CentreonCommandParameter {
     process {
         if ($PSCmdlet.ShouldProcess($Command)) {
             foreach ($_command in $Command) {
-                Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_command,$Parameter;$Value"
+                Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_command;$Parameter;$Value"
             }
         }
     }

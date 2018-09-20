@@ -83,7 +83,7 @@ function Set-CentreonHostTemplateParameter {
     process {
         if ($PSCmdlet.ShouldProcess($HostTemplate)) {
             foreach ($_hosttemplate in $HostTemplate) {
-                Invoke-Centreon -Object HTPL -Action SETPARAM -Value "$_hosttemplate,$Parameter;$Value"
+                Invoke-Centreon -Object HTPL -Action SETPARAM -Value "$_hosttemplate;$Parameter;$Value"
             }
         }
     }

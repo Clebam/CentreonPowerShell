@@ -48,7 +48,7 @@ function Set-CentreonHostGroupParameter {
     process {
         if ($PSCmdlet.ShouldProcess($HostGroup)) {
             foreach ($_hostgroup in $HostGroup) {
-                Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_hostgroup,$Parameter;$Value"
+                Invoke-Centreon -Object HOST -Action SETPARAM -Value "$_hostgroup;$Parameter;$Value"
             }
         }
     }
