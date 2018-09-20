@@ -55,7 +55,7 @@ WebServerGroup {WebMdz01, WebCoco01}
 # Work In Progress - Traduction
 Voir le projet : [Project](https://github.com/Clebam/CentreonPowerShell/projects/1)
 
-Voir les milestones : [MileStones](https://github.com/Clebam/CentreonPowerShell/milestone/2)
+Voir les milestones : [MileStones](https://github.com/Clebam/CentreonPowerShell/milestone/1)
 
 # To do
 
