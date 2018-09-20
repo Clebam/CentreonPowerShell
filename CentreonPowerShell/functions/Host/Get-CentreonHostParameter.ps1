@@ -85,14 +85,9 @@ function Get-CentreonHostParameter {
     process {
         $JoinedParameter = $Parameter -join "|"
         foreach ($_hostname in $HostName) {
-            # This part handle the different return type whether we use WebApi or Binary (Hopefully it will output as csv in the end)
-            $Return = ((Invoke-Centreon -Object HOST -Action GETPARAM -Value "$_hostname;$JoinedParameter" -NonCsvOutput) -replace ":", "=" | Sort-Object | ConvertFrom-StringData)
-            if ($Return.GetType().FullName -eq "System.Collections.Hashtable") {
-                $Return = New-Object -TypeName PSCustomObject -Property $Return
-            }
             $PSObject = [PSCustomObject]@{
                 HostName  = $_hostname -as [string]
-                Parameter = $Return
+                Parameter = [PSCustomObject] ((Invoke-Centreon -Object HOST -Action GETPARAM -Value "$_hostname;$JoinedParameter" -NonCsvOutput | Out-String) -replace ":", "=" | Sort-Object | ConvertFrom-StringData)
             }
             $PSObject
         }
