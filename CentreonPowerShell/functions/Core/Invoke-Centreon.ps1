@@ -11,6 +11,8 @@
         Corresponds to the variables applied to the action
     .PARAMETER NonCsvOutput
         Activate if the centreon command called returns a non csv output
+    .PARAMETER QueryType
+        Define if centreon uses binary or webapi to send queries. (You can also Set-CentreonQueryType)
     .EXAMPLE
         Invoke-Centreon -Object HOST -Action SHOW -Value "Web"
 
@@ -75,14 +77,14 @@ An error occured :
         $ApiToken = Get-CentreonApiToken
         $URL = "$WebServer/centreon/api/index.php?"
 
-        if ($Value) {        
+        if ($Value) {
             $Body = @{
                 "action" = "$Action"
                 "object" = "$Object"
                 "values" = "$Value"
             }
         }
-        else {        
+        else {
             $Body = @{
                 "action" = "$Action"
                 "object" = "$Object"
