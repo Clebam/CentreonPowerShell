@@ -23,9 +23,9 @@ function Get-CentreonCommand {
         [string] $Filter
     )
     if ($Filter) {
-        Invoke-Centreon -Object CMD -Action SHOW -Value $Filter
+        Invoke-Centreon -Object CMD -Action SHOW -Value $Filter | Select-Object @{Name = "Command"; Expression = {$_.Name}}, * -ExcludeProperty Name
     }
     else {
-        Invoke-Centreon -Object CMD -Action SHOW
+        Invoke-Centreon -Object CMD -Action SHOW | Select-Object @{Name = "Command"; Expression = {$_.Name}}, * -ExcludeProperty Name
     }
 }
