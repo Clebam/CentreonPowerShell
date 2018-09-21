@@ -7,6 +7,10 @@
         Corresponds to the name of the time period
     .PARAMETER Day
         Day of the year ("January 1")
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Remove-CentreonHostTimePeriodException -TimePeriod "Mornings" -Day "21/09"
 
@@ -16,7 +20,7 @@
         Version: 1.0
 #>
 function Remove-CentreonTimePeriodException {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -29,8 +33,10 @@ function Remove-CentreonTimePeriodException {
 
     }
     process {
-        foreach ($_timeperiod in $TimePeriod) {
-            Invoke-Centreon -Object TP -Action DELEXCEPTION -Value "$_timeperiod;$Day"
+        if ($PSCmdlet.ShouldProcess($TimePeriod)) {
+            foreach ($_timeperiod in $TimePeriod) {
+                Invoke-Centreon -Object TP -Action DELEXCEPTION -Value "$_timeperiod;$Day"
+            }
         }
     }
     end {

@@ -9,6 +9,10 @@
         Day of the year ("January 1")
     .PARAMETER TimeRange
         Time range (00:00-24:00)
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .EXAMPLE
         Set-CentreonHostTimePeriodException -TimePeriod "Mornings" -Day "January 1" -TimeRange "00:00-24:00"
 
