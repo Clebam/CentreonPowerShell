@@ -8,7 +8,7 @@
     .PARAMETER Day
         Day of the year ("January 1")
     .EXAMPLE
-        Remove-CentreonHostTimePeriodException -TimePeriod "Mornings" -Day "January 1"
+        Remove-CentreonHostTimePeriodException -TimePeriod "Mornings" -Day "21/09"
 
         Removes the exception for January 1st on time period Mornings
     .NOTES
@@ -23,10 +23,7 @@ function Remove-CentreonTimePeriodException {
         [string[]] $TimePeriod,
         [Parameter(Mandatory)]
         [ValidateNotNullOrEmpty()]
-        [string] $Day,
-        [Parameter(Mandatory)]
-        [ValidateNotNullOrEmpty()]
-        $TimeRange
+        [string] $Day
     )
     begin {
 
