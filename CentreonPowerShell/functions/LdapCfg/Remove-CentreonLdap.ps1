@@ -17,7 +17,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonTrap {
+function Remove-CentreonLdap {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

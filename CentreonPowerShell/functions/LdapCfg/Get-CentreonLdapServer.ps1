@@ -26,7 +26,6 @@ function Get-CentreonLdapServer {
     process {
         foreach ($_ldapserver in $LdapServer) {
             $PSObject = [PSCustomObject]@{
-        foreach ($_ldapserver in $LdapServer) {
                 LdapServer  = $_ldapserver -as [string]
                 Rules = Invoke-Centreon -Object LDAP -Action SHOWSERVER -Value "$_ldapserver"
             }

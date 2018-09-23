@@ -21,7 +21,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonLdapParameter {
+function Set-CentreonLdapServerParameter {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

@@ -26,7 +26,7 @@
         Version: 1.0
 #>
 function New-CentreonLdapServer {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -51,7 +51,9 @@ function New-CentreonLdapServer {
         }
     }
     process {
-        Invoke-Centreon -Object LDAP -Action ADDSERVER -Value "$LdapName;$ServerName;$Port;$SSL;$TLS"
+        if ($PSCmdlet.ShouldProcess($LdapName)) {
+            Invoke-Centreon -Object LDAP -Action ADDSERVER -Value "$LdapName;$ServerName;$Port;$SSL;$TLS"
+        }
     }
     end {
 
