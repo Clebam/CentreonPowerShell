@@ -10,7 +10,7 @@
 
         Returns all the vendors in Centreon
     .EXAMPLE
-        Get-CentreonHostGroup -Filter "Cisco"
+        Get-CentreonVendor -Filter "Cisco"
 
         Returns the host with "Cisco" in their name
     .NOTES

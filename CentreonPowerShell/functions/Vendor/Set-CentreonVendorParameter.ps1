@@ -14,7 +14,7 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Set-CentreonVendor -Vendor "DLink" -Parameter alias -Value "DLink routers and switches"
+        Set-CentreonVendorParameter -Vendor "DLink" -Parameter alias -Value "DLink routers and switches"
 
         Set the parameter alias with a new value on vendor DLink
     .NOTES
