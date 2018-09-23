@@ -1,12 +1,12 @@
 ﻿<#
     .SYNOPSIS
-        Sets a vendor parameter value
+        Sets a trap matching rules (REPLACE)
     .DESCRIPTION
-        Sets a vendor parameter value
-    .PARAMETER Vendor
-        Name of the vendor
+        Sets a trap matching rules (REPLACE)
+    .PARAMETER RuleID
+        ID of the matching rule
     .PARAMETER Parameter
-        Vendor Parameter to set (! alias = description, description = details)
+        Matching rule Parameter to set
     .PARAMETER Value
         Value applied to parameter
     .PARAMETER Confirm
@@ -14,24 +14,25 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Set-CentreonVendor -Vendor "DLink" -Parameter alias -Value "DLink routers and switches"
+        Set-CentreonTrapMatching -RuleID "8" -Parameter status -Value "critical"
 
-        Set the parameter alias with a new value on vendor DLink
+        Sets the rule with id = 8 : status to critical
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonVendorParameter {
+function Set-CentreonTrapParameter {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string[]] $Vendor,
+        [string[]] $RuleID,
         [Parameter(Mandatory)]
         [ValidateSet(
-            "name",
-            "alias",
-            "description"
+            "string",
+            "order",
+            "status",
+            "regexp"
         )]
         [string] $Parameter,
         [Parameter(Mandatory)]
@@ -41,9 +42,9 @@ function Set-CentreonVendorParameter {
 
     }
     process {
-        if ($PSCmdlet.ShouldProcess($Vendor)) {
-            foreach ($_vendor in $Vendor) {
-                Invoke-Centreon -Object VENDOR -Action SETPARAM -Value "$_vendor;$Parameter;$Value"
+        if ($PSCmdlet.ShouldProcess($RuleID)) {
+            foreach ($_ruleid in $RuleID) {
+                Invoke-Centreon -Object TRAP -Action UPDATEMATCHING -Value "$_ruleid;$Parameter;$Value"
             }
         }
     }

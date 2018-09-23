@@ -1,36 +1,36 @@
 ﻿<#
     .SYNOPSIS
-        Removes an existing vendor
+        Removes a trap matching rules
     .DESCRIPTION
-        Removes an existing vendor
-    .PARAMETER Vendor
-        Corresponds to the name of the vendor
+        Removes a trap matching rules
+    .PARAMETER RuleID
+        ID of the matching rule
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonVendor -Vendor "DLink"
+        Remove-CentreonTrapMatching -RuleID "8"
 
-        Removes the vendor DLink
+        Removes the matching rule with ID 8
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonVendor{
+function Remove-CentreonTrapMatching {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string[]] $Vendor
+        [string[]] $RuleID
     )
     begin {
 
     }
     process {
-        if ($PSCmdlet.ShouldProcess($Vendor)) {
-            foreach ($_vendor in $Vendor) {
-                Invoke-Centreon -Object VENDOR -Action DEL -Value $_vendor
+        if ($PSCmdlet.ShouldProcess($RuleID)) {
+            foreach ($_ruleid in $RuleID) {
+                Invoke-Centreon -Object TRAP -Action DELMATCHING -Value "$_ruleid"
             }
         }
     }
