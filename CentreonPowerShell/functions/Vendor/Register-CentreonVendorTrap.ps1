@@ -19,7 +19,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function New-CentreonHostGroup {
+function Register-CentreonVendorTrap {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory)]

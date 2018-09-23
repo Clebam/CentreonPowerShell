@@ -12,14 +12,14 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonHostCG -HostTemplate "WebServers" -ContactGroup "Mdz_Support"
+        Remove-CentreonHostTemplateCG -HostTemplate "WebServers" -ContactGroup "Mdz_Support"
 
         Removes the contact group Mdz_Support from the host template WebServers
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHostCG {
+function Remove-CentreonHostTemplateCG {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

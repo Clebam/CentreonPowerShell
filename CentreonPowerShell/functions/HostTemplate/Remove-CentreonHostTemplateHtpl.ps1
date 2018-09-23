@@ -19,7 +19,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHtpl {
+function Remove-CentreonHostTemplateHtpl {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

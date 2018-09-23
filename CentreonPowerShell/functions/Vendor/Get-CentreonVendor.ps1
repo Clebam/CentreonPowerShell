@@ -17,7 +17,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Get-CentreonHostGroup {
+function Get-CentreonVendor {
     [CmdletBinding()]
     param (
         [string] $Filter

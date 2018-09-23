@@ -19,7 +19,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHostMacro {
+function Remove-CentreonHostTemplateMacro {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

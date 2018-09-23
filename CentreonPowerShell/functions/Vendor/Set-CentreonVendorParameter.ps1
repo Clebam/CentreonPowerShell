@@ -21,7 +21,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonHostGroupParameter {
+function Set-CentreonVendorParameter {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

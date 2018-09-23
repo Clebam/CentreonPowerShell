@@ -12,14 +12,14 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Removes-CentreonHostContact -HostTemplate "WebServers" -Contact "Clebam","C-Bam"
+        Remove-CentreonHostTemplateContact -HostTemplate "WebServers" -Contact "Clebam","C-Bam"
 
         Removes the contacts Clebam and C-Bam from WebServers
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Add-CentreonHostContact {
+function Remove-CentreonHostTemplateContact {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

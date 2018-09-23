@@ -23,7 +23,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonTrapParameter {
+function Add-CentreonTrapMatching {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
