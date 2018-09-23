@@ -6,7 +6,7 @@
     .PARAMETER TimePeriod
         Corresponds to the name of the time period
     .PARAMETER Day
-        Day of the year ("January 1")
+        Day of the year ("January 1", "01/01")
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
