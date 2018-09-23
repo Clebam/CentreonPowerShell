@@ -57,7 +57,7 @@ foreach ($file in (Get-ChildItem "$PSScriptRoot\functions" -Recurse -File -Filte
 	if ($file.Name -notlike $Include) { continue }
 	if ($file.Name -like $Exclude) { continue }
 	
-	Write-PSFMessage -Level Significant -Message "  Executing $($file.Name)"
+	Write-PSFMessage -Level Significant -Message "  Executing <c='em'>$($file.Name)</c>"
 	$TestOuputFile = Join-Path $TestResultsPath "TEST-$($file.BaseName).xml"
 	$results = Invoke-Pester -Script $file.FullName -Show None -PassThru -OutputFile $TestOuputFile -OutputFormat NUnitXml
 	foreach ($result in $results)
