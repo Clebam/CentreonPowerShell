@@ -3,7 +3,7 @@
         Sets a trap matching rules (REPLACE)
     .DESCRIPTION
         Sets a trap matching rules (REPLACE)
-    .PARAMETER RuleID
+    .PARAMETER Id
         ID of the matching rule
     .PARAMETER Parameter
         Matching rule Parameter to set
@@ -14,7 +14,7 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Set-CentreonTrapMatching -RuleID "8" -Parameter status -Value "critical"
+        Set-CentreonTrapMatching -Id "8" -Parameter status -Value "critical"
 
         Sets the rule with id = 8 : status to critical
     .NOTES
@@ -26,7 +26,7 @@ function Set-CentreonTrapMatching {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string[]] $RuleID,
+        [string[]] $Id,
         [Parameter(Mandatory)]
         [ValidateSet(
             "string",
@@ -42,9 +42,9 @@ function Set-CentreonTrapMatching {
 
     }
     process {
-        if ($PSCmdlet.ShouldProcess($RuleID)) {
-            foreach ($_ruleid in $RuleID) {
-                Invoke-Centreon -Object TRAP -Action UPDATEMATCHING -Value "$_ruleid;$Parameter;$Value"
+        if ($PSCmdlet.ShouldProcess($Id)) {
+            foreach ($_id in $Id) {
+                Invoke-Centreon -Object TRAP -Action UPDATEMATCHING -Value "$_id;$Parameter;$Value"
             }
         }
     }

@@ -3,14 +3,14 @@
         Removes a trap matching rules
     .DESCRIPTION
         Removes a trap matching rules
-    .PARAMETER RuleID
+    .PARAMETER Id
         ID of the matching rule
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonTrapMatching -RuleID "8"
+        Remove-CentreonTrapMatching -Id "8"
 
         Removes the matching rule with ID 8
     .NOTES
@@ -22,15 +22,15 @@ function Remove-CentreonTrapMatching {
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string[]] $RuleID
+        [string[]] $Id
     )
     begin {
 
     }
     process {
-        if ($PSCmdlet.ShouldProcess($RuleID)) {
-            foreach ($_ruleid in $RuleID) {
-                Invoke-Centreon -Object TRAP -Action DELMATCHING -Value "$_ruleid"
+        if ($PSCmdlet.ShouldProcess($Id)) {
+            foreach ($_id in $Id) {
+                Invoke-Centreon -Object TRAP -Action DELMATCHING -Value "$_id"
             }
         }
     }
