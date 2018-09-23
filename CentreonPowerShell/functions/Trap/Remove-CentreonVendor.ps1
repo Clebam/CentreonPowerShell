@@ -1,36 +1,36 @@
 ﻿<#
     .SYNOPSIS
-        Removes an existing hostgroup
+        Removes an existing vendor
     .DESCRIPTION
-        Removes an existing hostgroup
-    .PARAMETER HostGroup
-        Corresponds to the name of the hostgroup
+        Removes an existing vendor
+    .PARAMETER Vendor
+        Corresponds to the name of the vendor
     .PARAMETER Confirm
         Prompts to confirm the action
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Remove-CentreonHost -HostGroup "WebServers"
+        Remove-CentreonVendor -Vendor "DLink"
 
-        Removes the host WebServers
+        Removes the vendor DLink
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonHostGroup {
+function Remove-CentreonVendor{
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string[]] $HostGroup
+        [string[]] $Vendor
     )
     begin {
 
     }
     process {
-        if ($PSCmdlet.ShouldProcess($HostGroup)) {
-            foreach ($_hostgroup in $HostGroup) {
-                Invoke-Centreon -Object HG -Action DEL -Value $_hostgroup
+        if ($PSCmdlet.ShouldProcess($Vendor)) {
+            foreach ($_vendor in $Vendor) {
+                Invoke-Centreon -Object VENDOR -Action DEL -Value $_vendor
             }
         }
     }
