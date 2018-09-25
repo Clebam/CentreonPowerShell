@@ -70,7 +70,7 @@ function Invoke-Centreon {
         }
         $Process = Invoke-Process -Process $CentreonBinary -Argument $arguments
 
-        if ($Process.ExitCode -eq 0) {
+        if (($Process.ExitCode -eq 0) -or ($ManagementAction)) { # centreon -e or -i doesn't not return exit code ?!?
             $Output = $Process.StandardOutput.ReadToEnd()
             $CsvOutput = $Output | ConvertFrom-Csv -Delimiter ";"
             if ($NonCsvOutput) {
