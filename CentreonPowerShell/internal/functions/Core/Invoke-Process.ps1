@@ -28,6 +28,6 @@ function Invoke-Process {
     $Process = New-Object System.Diagnostics.Process
     $Process.StartInfo = $ProcessInfo
     $Process.Start() | Out-Null
-    $Process.WaitForExit()
+    $Process.WaitForExit(3000)
     $Process
 }
