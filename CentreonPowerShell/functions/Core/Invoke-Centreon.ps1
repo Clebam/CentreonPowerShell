@@ -24,10 +24,10 @@
 function Invoke-Centreon {
     [CmdletBinding(DefaultParameterSetName = "OAV")]
     param(
-        [Parameter(Mandatory, ParameterSetName = "OAV")]
+        [Parameter(ParameterSetName = "OAV")]
         [ValidateNotNullOrEmpty()]
         [string] $Object,
-        [Parameter(Mandatory, ParameterSetName = "OAV")]
+        [Parameter(ParameterSetName = "OAV")]
         [ValidateNotNullOrEmpty()]
         [string] $Action,
         [Parameter(ParameterSetName = "OAV")]
