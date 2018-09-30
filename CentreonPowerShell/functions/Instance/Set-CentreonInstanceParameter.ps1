@@ -14,14 +14,14 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-        Set-CentreonInstance -Instance "PollerTest" -Parameter ssh_port -Value "3322"
+        Set-CentreonInstanceParameter -Instance "PollerTest" -Parameter ssh_port -Value "3322"
 
         Set the parameter ssh-port with a new value on trap PollerTest
     .NOTES
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonTrapParameter {
+function Set-CentreonInstanceParameter {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

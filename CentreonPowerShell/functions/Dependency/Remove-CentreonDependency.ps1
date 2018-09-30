@@ -17,7 +17,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Remove-CentreonDepency {
+function Remove-CentreonDependency {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]

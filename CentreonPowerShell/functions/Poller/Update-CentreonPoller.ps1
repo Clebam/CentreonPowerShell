@@ -15,6 +15,10 @@
         Update-CentreonPoller -Id 1
 
         Reloads the poller with id 1
+    .PARAMETER Confirm
+        Prompts to confirm the action
+    .PARAMETER WhatIf
+        Performs the action as a test
     .NOTES
         Author: Clebam
         Version: 1.0
@@ -34,13 +38,17 @@ function Update-CentreonPoller {
     }
     process {
         if ($PSCmdlet.ParameterSetName -eq "Name") {
-            foreach ($_poller in $Poller) {
-                Invoke-Centreon -Action POLLERRELOAD -Value $_poller -NonCsvOutput
+            if ($PSCmdlet.ShouldProcess($Poller)) {
+                foreach ($_poller in $Poller) {
+                    Invoke-Centreon -Action POLLERRELOAD -Value $_poller -NonCsvOutput
+                }
             }
         }
         if ($PSCmdlet.ParameterSetName -eq "Id") {
-            foreach ($_id in $Id) {
-                Invoke-Centreon -Action POLLERRELOAD -Value $_id -NonCsvOutput
+            if ($PSCmdlet.ShouldProcess($Id)) {
+                foreach ($_id in $Id) {
+                    Invoke-Centreon -Action POLLERRELOAD -Value $_id -NonCsvOutput
+                }
             }
         }
     }

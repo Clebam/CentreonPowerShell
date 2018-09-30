@@ -13,6 +13,10 @@
         Activate if the centreon command called returns a non csv output
     .PARAMETER QueryType
         Define if centreon uses binary or webapi to send queries. (You can also Set-CentreonQueryType)
+    .PARAMETER ManagementAction
+        Define a management action to perform
+    .PARAMETER Path
+        Path of file to import with management action Import
     .EXAMPLE
         Invoke-Centreon -Object HOST -Action SHOW -Value "Web"
 

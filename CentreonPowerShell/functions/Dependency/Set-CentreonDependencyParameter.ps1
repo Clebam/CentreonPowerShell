@@ -21,7 +21,7 @@
         Author: Clebam
         Version: 1.0
 #>
-function Set-CentreonDepencyParameter {
+function Set-CentreonDependencyParameter {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]
