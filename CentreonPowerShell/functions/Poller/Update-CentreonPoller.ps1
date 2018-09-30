@@ -24,7 +24,7 @@
         Version: 1.0
 #>
 function Update-CentreonPoller {
-    [CmdletBinding(DefaultParameterSetName = "Name")]
+    [CmdletBinding(DefaultParameterSetName = "Name",SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline, ParameterSetName = "Name")]
         [ValidateNotNullOrEmpty()]

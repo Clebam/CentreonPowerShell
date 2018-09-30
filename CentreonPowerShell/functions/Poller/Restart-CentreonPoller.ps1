@@ -24,7 +24,7 @@
         Version: 1.0
 #>
 function Restart-CentreonPoller {
-    [CmdletBinding(DefaultParameterSetName = "Name",SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName = "Name", SupportsShouldProcess)]
     param (
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline, ParameterSetName = "Name")]
         [ValidateNotNullOrEmpty()]
@@ -36,7 +36,7 @@ function Restart-CentreonPoller {
     begin {
 
     }
-    process {     
+    process {
         if ($PSCmdlet.ParameterSetName -eq "Name") {
             if ($PSCmdlet.ShouldProcess($Poller)) {
                 foreach ($_poller in $Poller) {
@@ -51,7 +51,6 @@ function Restart-CentreonPoller {
                 }
             }
         }
-    }
     }
     end {
 

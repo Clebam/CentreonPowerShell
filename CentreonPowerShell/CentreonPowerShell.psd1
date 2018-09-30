@@ -188,7 +188,7 @@
 	'Set-CentreonVendorParameter',
 	'Set-CentreonWebServer',
 	'Test-CentreonPollerConfiguration',
-	'Update-CentreonPollet')
+	'Update-CentreonPoller')
 
 	# Cmdlets to export from this module
 	CmdletsToExport = ''

@@ -3,7 +3,7 @@
         Sets a dependency parameter value
     .DESCRIPTION
         Sets a dependency parameter value
-    .PARAMETER Instance
+    .PARAMETER Dependency
         Name of the dependency
     .PARAMETER Parameter
         Trap Parameter to set
