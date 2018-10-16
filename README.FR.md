@@ -53,6 +53,8 @@ WebServerGroup {WebMdz01, WebCoco01}
 ```
 
 # Work In Progress - Traduction
+__En suspens pour le moment : Centreon fait un upgrade de clapi et j'attends de voir les impacts sur ce projet__
+
 Voir le projet : [Project](https://github.com/Clebam/CentreonPowerShell/projects/1)
 
 Voir les milestones : [MileStones](https://github.com/Clebam/CentreonPowerShell/milestone/1)
