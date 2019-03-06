@@ -12,7 +12,7 @@
     .PARAMETER WhatIf
         Performs the action as a test
     .EXAMPLE
-    Set-CentreonWebServer -WebServer 192.168.1.100 -Register
+    Set-CentreonWebServer -WebServer https://192.168.1.100 -Register
 
     Sets webserver and stores then in a configuration file
     .NOTES
